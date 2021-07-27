@@ -96,7 +96,7 @@ export default function TransitionsModal() {
         <Fade in={open}>
           <div className={classes.paper}>
             <div className="search__header">
-              <input type="text" placeholder="Search by Name or Email" />
+              <input type="text" placeholder="Name, Email" />
               {/* <button type="submit"> Search</button> */}
             </div>
             <div className="search__body">
@@ -110,7 +110,7 @@ export default function TransitionsModal() {
                 <FileCopyIcon />
               </div>
 
-              {/* <button type="submit">Share</button> */}
+              <button type="submit">Share</button>
             </div>
           </div>
         </Fade>

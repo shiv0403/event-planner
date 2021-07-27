@@ -110,7 +110,7 @@ export default function TransitionsModal() {
                 <FileCopyIcon />
               </div>
 
-              {/* <button type="submit">Share</button> */}
+              <button type="submit">Share</button>
             </div>
           </div>
         </Fade>
