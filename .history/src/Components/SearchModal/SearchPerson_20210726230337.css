@@ -1,0 +1,4 @@
+.search__person {
+  display: flex;
+  justify-content: space-between;
+}

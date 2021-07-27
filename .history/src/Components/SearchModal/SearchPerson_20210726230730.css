@@ -1,0 +1,7 @@
+.search__person {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: red;
+}

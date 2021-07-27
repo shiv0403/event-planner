@@ -1,0 +1,38 @@
+.search__person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 20px 30px; */
+  width: 100%;
+  margin: 20px auto;
+  border-bottom: 1px #e2e8f0 solid;
+}
+
+.sp__details {
+  /* background-color: #eee; */
+  border-radius: 10px;
+  width: 95%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.sp__details > h3 {
+  font-size: 1rem;
+}
+
+.sp__add > button {
+  padding: 5px 3px;
+  width: 100px;
+  border: 2px #244ed8 solid;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  font-weight: 800;
+  color: #244ed8;
+}
+
+/* 
+#f7fafc
+#2563eb
+#414a59
+#244ed8 */

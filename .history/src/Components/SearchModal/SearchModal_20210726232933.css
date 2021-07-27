@@ -1,0 +1,39 @@
+.search__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.search__header > input {
+  border-radius: 10px;
+  width: 95%;
+  padding: 3px;
+  margin-right: 10px;
+}
+
+.search__header > button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.search__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.search__footer > p {
+  background-color: #eee;
+  padding: 5px 10px;
+  width: 95%;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.search__footer > button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+}

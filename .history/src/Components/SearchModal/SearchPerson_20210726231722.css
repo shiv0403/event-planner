@@ -1,0 +1,19 @@
+.search__person {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 20px 30px; */
+  width: 100%;
+  margin: 20px auto;
+}
+
+.sp__details {
+  background-color: #eee;
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.sp__add > button {
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+}
