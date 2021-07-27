@@ -1,0 +1,16 @@
+.search__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__header > input {
+  width: 95%;
+  padding: 3px;
+  margin-right: 10px;
+}
+
+.search__header > button {
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+}

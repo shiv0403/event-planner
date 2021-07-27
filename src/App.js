@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./Components/SearchModal/SearchModal";
 
 
 function App() {

@@ -1,0 +1,34 @@
+.search__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__header > input {
+  width: 95%;
+  padding: 3px;
+  margin-right: 10px;
+}
+
+.search__header > button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.search__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__footer > p {
+  background-color: #eee;
+  padding: 5px 10px;
+  width: 95%;
+  border-radius: 10px;
+}
+
+.search__footer > button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+}
