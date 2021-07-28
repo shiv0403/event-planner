@@ -4,3 +4,11 @@
     height:700px;
     padding: 16px;
 }
+
+.eventsCollectionName{
+    padding-bottom: 12px;
+    color:#1A202C;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 25px;
+}

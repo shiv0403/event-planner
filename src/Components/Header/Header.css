@@ -2,4 +2,36 @@
     height: 55px;
     width: 100%;
     border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchBar{
+    position: relative;
+}
+.searchInput {
+    margin-left: 16px;
+    padding: 8px 12px;
+    padding-right: 30px;
+    color :#2D3748;
+    width: 400px ;
+    border: 1px solid #ced5df;
+} 
+#searchIcon{
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  color:#3f495a;
+}
+.searchInput:focus{
+    outline-color: #869ed1;
+}
+.searchInput::placeholder{
+    letter-spacing: 1px;
+}
+.headerIcons a{
+  margin-right: 18px;
+  text-decoration: none;
+  font-size: 17px;
+  color:#3f495a;
 }
