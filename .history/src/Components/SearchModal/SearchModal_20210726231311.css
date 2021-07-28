@@ -1,9 +1,0 @@
-.search__header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.search__header > input {
-  width: 95%;
-  padding: 5px;
-}
