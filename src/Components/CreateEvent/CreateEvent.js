@@ -29,21 +29,25 @@ const CreateEvent = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    eventTitle: "",
-    eventVenue: "",
-    eventImage: "",
-    eventCategory: "",
-    eventBudget: {
-      type: Number,
-    },
-    eventDate: {
-      type: Date,
-    },
-  });
+  const [eventTitle, setEventTitle] = useState("");
+  const [eventVenue, setEventVenue] = useState("");
+  const [eventImage, setEventImage] = useState("");
+  const [eventCategory, setEventCategory] = useState("");
+  const [eventBudget, setEventBudget] = useState("");
+  const [eventDate, setEventDate] = useState("");
+
+  const values = {
+    eventTitle,
+    eventVenue,
+    eventImage,
+    eventCategory,
+    eventBudget,
+    eventDate,
+  };
 
   //next form
   const nextStep = () => {
+    console.log(values);
     setStep((prev) => prev + 1);
   };
 
@@ -52,8 +56,32 @@ const CreateEvent = () => {
     setStep((prev) => prev - 1);
   };
 
-  const handleChange = (e) => {
-    setFormData(...formData, ([e.target.name] = e.target.value));
+  const handleChange = (input) => (e) => {
+    if (input === "eventTitle") {
+      setEventTitle(e.target.value);
+    }
+    if (input === "eventVenue") {
+      console.log(e.target.value);
+      setEventVenue(e.target.value);
+    }
+    if (input === "eventImage") {
+      setEventImage(e.target.value);
+    }
+    if (input === "eventCategory") {
+      console.log(input);
+      setEventCategory(e.target.value);
+    }
+    if (input === "eventBudget") {
+      setEventBudget(e.target.value);
+    }
+    if (input === "eventDate") {
+      setEventDate(e.target.value);
+    }
+  };
+
+  const handleChangeCategory = (e) => {
+    console.log(e);
+    setEventCategory(e);
   };
 
   const handleOpen = () => {
@@ -91,14 +119,14 @@ const CreateEvent = () => {
               <EventDetails
                 nextStep={nextStep}
                 handleChange={handleChange}
-                formData={formData}
+                handleChangeCategory={handleChangeCategory}
+                values={values}
               />
             )}
             {step === 2 && (
               <AddPeople
                 prevStep={prevStep}
                 nextStep={nextStep}
-                formData={formData}
                 handleChange={handleChange}
               />
             )}
