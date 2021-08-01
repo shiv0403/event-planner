@@ -9,7 +9,10 @@ function Card() {
             <img src="brandLogo.svg" />
           </div>
         </div>
-        <h3 className="eventName">Priyansh's Birthday</h3>
+        <h3 className="eventName" title="Celebrating Priyansh's Birthday">Celebrating Priyansh's Birthday</h3>
+        <p className="eventVenue"><i className="fa fa-map-marker"></i>Barbecue Nation, New Delhi</p>
+        <p className="eventDate"><i className="fa fa-clock"></i>Ends in 23Hrs</p>
+        <p className="eventDate adminName"><i className="fa fa-user"></i>Himalaya</p>
         <div className="cardBottomSection">
           <div className="peopleInEvent">
             <img src="batman.jpg" className="imgOne" alt="" />
