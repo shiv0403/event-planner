@@ -1,0 +1,69 @@
+.add__person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.add__person:not(:last-child) {
+  border-bottom: 1px #e2e8f0 solid;
+}
+
+.ap__details {
+  display: flex;
+  border-radius: 10px;
+  width: 95%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.ap__details__avatar {
+  margin-right: 15px;
+}
+
+.ap__details__cred > h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.ap__details__cred > p {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: gray;
+}
+
+.addButton {
+  padding: 5px 3px;
+  width: 100px;
+  border: 1px #244ed8 solid;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  background-color: #fff;
+  font-weight: 800;
+  color: #244ed8;
+}
+
+.addButton:hover {
+  background-color: RGBA(36, 78, 216, 0.1);
+  box-shadow: inset 0 0 0 1.5px #244ed8;
+  transition: all 0.3s;
+}
+
+.addedButton {
+  padding: 5px 3px;
+  width: 100px;
+  border: 1px rgb(45, 185, 45) solid;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  background-color: #fff;
+  font-weight: 800;
+  color: rgb(45, 185, 45);
+}
+
+.addedButton:hover {
+  background-color: rgba(132, 225, 132, 0.2);
+  box-shadow: inset 0 0 0 1.5px green;
+  transition: all 0.3s;
+}
