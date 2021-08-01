@@ -1,0 +1,58 @@
+.message {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  background-color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+}
+
+.message__time {
+  margin-left: 20px;
+  font-size: 10px;
+  color: gray;
+}
+
+.message__name {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.message__send {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 15px;
+  border-top-right-radius: 0;
+  color: #fff;
+  background-color: RGBA(36, 78, 216, 0.75);
+  margin-bottom: 30px;
+  margin-left: auto;
+  box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 6px -1px rgba(0, 0, 0, 0.75);
+}
+
+.message__time__send {
+  margin-left: 20px;
+  font-size: 10px;
+  color: #fff;
+}
+
+.message__name__send {
+  display: none;
+  font-weight: 800;
+  font-size: 15px;
+}

@@ -18,23 +18,27 @@ import Icon from "./Icon.js";
 
 import useStyle from "./styles.js";
 
-const initialState = {
-  email: "",
-  password: "",
-};
-
 function Login() {
   const classes = useStyle();
   const history = useHistory();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState(initialState);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
   const [checked, setChecked] = useState(false);
 
   const sample = () => {};
   const handleSubmit = () => {};
   const handleCheck = () => {
     setChecked((prev) => !prev);
+    console.log(checked);
+    if (checked) {
+      setFormData({ email: "sample@gmail.com", password: "sampleacc" });
+    } else {
+      setFormData({ email: "", password: "" });
+    }
   };
   const handleChange = (e) => {
     console.log("This is change function");
@@ -43,7 +47,6 @@ function Login() {
 
   const handleSwitch = () => {
     console.log("clicked");
-    history.push("/login");
   };
 
   const handleShowPassword = () => {
@@ -77,17 +80,18 @@ function Login() {
                 name="email"
                 label="Email Address"
                 type="email"
-                handleChange={handleChange}
+                onChange={handleChange}
                 xs={6}
                 varient="outlined"
                 fullWidth
                 required
                 className={classes.input}
+                value={formData.email}
               />
               <TextField
                 name="password"
                 label="password"
-                handleChange={handleChange}
+                onChange={handleChange}
                 type={showPassword ? "text" : "password"}
                 handleShowPassword={handleShowPassword}
                 xs={6}
@@ -95,6 +99,7 @@ function Login() {
                 fullWidth
                 required
                 className={classes.input}
+                value={formData.password}
               />
               <FormGroup row className={classes.checkbox}>
                 <FormControlLabel

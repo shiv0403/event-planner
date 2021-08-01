@@ -26,19 +26,19 @@
 .pageLink{
   margin-top: 8px;
   text-decoration: none;
-  color:#4B4DBD;
-  padding:12px 16px;
+  color: #4b4dbd;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
 }
-.pageLink.active{
-    background-color: #EEF2FF;
-    border-radius: 10px;
+.pageLink.active {
+  background-color: #eef2ff;
+  border-radius: 10px;
 }
 
 .pageLink p {
-    margin-left: 16px;
-    font-size: 16px;
+  margin-left: 16px;
+  font-size: 16px;
 }
 
 .sidebarContainer.show{
@@ -54,4 +54,3 @@
         left: 0px;
     }
 }
-

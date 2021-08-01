@@ -231,7 +231,7 @@
         display: block;
     }
     .allInvites,.allNotifications{
-        display: none;
+        display: block;
         top:100%;
         left: 16px;
         transition: 0.25s ease;
