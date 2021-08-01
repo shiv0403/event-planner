@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: space-between;
 }
+.searchBarAnEventBtn{
+    display: flex;
+    align-items: center;
+}
 .searchBar{
     position: relative;
 }
@@ -14,8 +18,13 @@
     padding: 8px 12px;
     padding-right: 30px;
     color :#2D3748;
-    width: 400px ;
+    width: 340px;
+    /* max-width: 400px; */
+    letter-spacing: 1px;
     border: 1px solid #ced5df;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
 } 
 #searchIcon{
   position: absolute;
@@ -29,9 +38,212 @@
 .searchInput::placeholder{
     letter-spacing: 1px;
 }
+
+.mainSearchResults {
+    width: 340px;
+    position: absolute;
+    left: 16px;
+    top:35px;
+    height: auto;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 340px;
+    background-color: white;
+    z-index: 10;
+    border : 1px solid #E2E8F0;
+    border-top:none;
+    box-shadow: 0 7px 30px -10px rgba(81, 84, 85, 0.5);
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: none;
+}
+.mainSearchResults.show{
+    display: block;
+}
+
+.addEventBtn{
+    margin-left: 10px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;   
+    font-weight: bold;
+    background-color: #2563eb;
+    color: white;
+    border:none;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+    cursor: pointer;
+    transition: ease 0.2s;
+}
+.addEventBtn:hover{
+    transform: scale(0.95);
+}
+.addEventBtn i {
+    margin-right: 5px;
+
+}
 .headerIcons a{
   margin-right: 18px;
   text-decoration: none;
   font-size: 17px;
   color:#3f495a;
+}
+
+/* invites.css */
+.allInvites,.allNotifications{
+    display: none;
+    position:absolute;
+    top:60px;
+    right:15px;
+    width: 325px;
+    height: 350px;
+    border: 1px solid #E2E8F0;
+    background: white;
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 7px 30px -10px rgba(81, 84, 85, 0.5);
+   
+}
+.allInvites.show{
+    display: block;
+}
+
+.allNotifications{
+    z-index: 11;
+}
+
+.allNotifications.show{
+    display: block;
+}
+
+.invitesList{
+    overflow:scroll;
+    overflow-x: hidden;
+    height: 310px;
+}
+.invitesList::-webkit-scrollbar {
+    width: 3px;
+}
+
+.invitesList::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #343a40;
+    box-shadow:inset 0 0 6px rgba(0,0,0,0.5) ;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.brandNameContainer{
+    display: none;
+}
+
+.addEventMobile{
+    position: fixed;
+    bottom: 70px;
+    right: 16px;
+    z-index: 20;
+    display: none;
+}
+.addEventMobile button{
+    width:40px;
+    height: 40px;
+    background-color: #2563eb;
+    border:none;
+    border-radius: 50%;
+    box-shadow: 0px 7px 30px -10px rgba(81, 84, 85, 0.5) ;
+    transition: 0.2s ease;
+}
+.addEventMobile button:hover{
+    transform: scale(0.9);
+}
+.addEventMobile i {
+    color: white;
+    font-size: 17px;
+}
+
+.bottomMobileNavbar{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-top: 1px solid #E2E8F0;
+    box-shadow: 0px 7px 30px -10px rgba(81, 84, 85, 0.5) ;
+    z-index: 22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+.bottomMobileNavbar a{
+    font-size: 15px;
+  color:#3f495a;
+  text-align: center;
+  flex:1;
+  border-right: 1px solid #a3a4a5;
+ 
+}
+.bottomMobileNavbar a:last-child{
+    border-right: none;
+}
+.toggleSidebar{
+    display: none;
+    font-size: 17px;
+  color:#3f495a;
+    margin-right: 16px;
+}
+
+.mobileSearchResults{
+    position: fixed;
+    right: -100%;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    background-color: ghostwhite;
+    z-index: 50;
+}
+.mobileSearchResults.show{
+    right: 0%;
+}
+
+@media screen and (max-width:900px) {
+    .searchBarAnEventBtn{
+        display: none;
+    }
+    .brandNameContainer {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .brandName{
+        margin-left: 8px;
+    }
+    .logo{
+        width: 35px;
+        height: 35px;
+    }
+    .addEventMobile{
+        display: block;
+    }
+    .headerIcons{
+        display: none;
+    }
+    .toggleSidebar{
+        display: block;
+    }
+    .allInvites,.allNotifications{
+        display: none;
+        top:100%;
+        left: 16px;
+        transition: 0.25s ease;
+        z-index: 21;
+    }
+    .allInvites.show,.allNotifications.show{
+        top:40%;
+        display: block;
+    }
+    .bottomMobileNavbar {
+        display: flex;
+    }
+    
+    
 }

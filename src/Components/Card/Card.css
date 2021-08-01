@@ -4,6 +4,8 @@
     border:1px solid #bec0c5;
     position: relative;
     background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
 }
 
 
@@ -11,21 +13,23 @@
     height: 35%;
     border-bottom: 1px solid #bec0c5;
     position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     background-image: url('../../images/birthdayCoverImage.jpg');
     background-size: cover;
 }
 .cardPhoto {
     position: absolute;;
-    bottom: -40px;
+    bottom: -35px;
     right: 10px;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     /* border: 1px solid #bec0c5; */
 }
 .cardPhoto img{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 .inviteToEventBtn{
@@ -38,6 +42,10 @@
     color: #3f495a;
     font-weight: 400px;
     padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 78%;
+    white-space: nowrap;
 }
 
 .cardBottomSection{
@@ -85,4 +93,122 @@
     font-size: 12px;
     left: 65px;
     width: 200px;
+}
+
+.eventVenue {
+    margin-top: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 320px;
+    overflow: hidden;
+}
+.eventVenue, .eventDate{
+    color:#767779;
+    font-size: 0.8rem;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.eventDate i {
+    margin-right: 5px;
+}
+.eventDate i {
+    font-size: 14px;
+}
+.eventVenue i, .adminName i {
+    margin-right: 6px;
+}
+.eventVenue i {
+    margin-left: 1px;
+}
+
+@media screen and (max-width:500px) {
+    .eventCard{
+        max-width: 320px;
+        width: 100%;
+        height: 235px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .eventCard{
+        max-width: 300px;
+        width: 100%;
+        height: 205px;
+    }
+    .cardTopSection{
+        height: 30%;
+    }
+    .cardPhoto{
+        bottom: -28px;
+    }
+    .cardPhoto,.cardPhoto img{
+        width: 56px;
+        height: 56px;
+    }
+    .eventName{
+        font-size: 14px;
+    }
+    .eventVenue{
+        margin-top: 3px;
+    }
+    .eventVenue,.eventDate,.adminName,.eventVenue i,.eventDate i ,.adminName i{
+        font-size: 12px;
+    }
+    
+    .cardBottomSection{
+        height: 40px;
+    }
+    .peopleInEvent img {
+        height: 20px;
+        width: 20px;
+    }
+    .imgOne {
+        left: 4px;
+    }
+    .imgTwo{
+        left:15px;
+    }
+    .imgThree{
+        left: 26px;
+    }
+    .peopleInEvent p{
+        left: 48px;
+        font-size: 11px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .eventCard{
+        max-width: 300px;
+        width: 100%;
+        height: 197px;
+    }
+    .peopleInEvent p {
+        width: 180px;
+    }
+   
+}
+
+@media screen and (max-width:380px) {
+    .eventCard{
+        height: 170px;
+    }
+    .eventVenue,.eventDate,.adminName,.eventVenue i,.eventDate i ,.adminName i{
+        font-size: 10px;
+    }
+    .cardPhoto{
+        bottom: -25px;
+    }
+    .eventVenue{
+        margin-top: 1px;
+    }
+    .cardPhoto,.cardPhoto img{
+        width: 50px;
+        height: 50px;
+    }
+    .peopleInEvent p{
+        font-size: 10px;
+        width: 150px;
+    }
 }
