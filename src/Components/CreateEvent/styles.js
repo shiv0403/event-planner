@@ -19,8 +19,8 @@ export default makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   avatar: {
-    width: "20%",
-    height: "70px",
+    width: "30%",
+    height: "110px",
     margin: "auto",
   },
   container: {

@@ -34,7 +34,7 @@ function EventSuccess({ handleClose, step }) {
     <div className={classes.container}>
       <h1 className={classes.heading}>Event Created successfully</h1>
       <img
-        src="http://www.clipartbest.com/cliparts/pc5/77G/pc577GocB.gif"
+        src="https://preview.pixlr.com/images/800wm/1256/1/1256102704.jpg"
         alt=""
         className={classes.image}
       />

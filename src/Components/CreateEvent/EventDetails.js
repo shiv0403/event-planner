@@ -25,6 +25,7 @@ function EventDetails({
   const [checked3, setChecked3] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [checked5, setChecked5] = useState(false);
+  const [checked6, setChecked6] = useState(false);
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
@@ -38,7 +39,7 @@ function EventDetails({
   };
 
   const handleCheck = (check) => {
-    for (var i = 1; i <= 5; ++i) {
+    for (var i = 1; i <= 6; ++i) {
       if (i !== check) {
         if (i === 1) {
           setChecked1(0);
@@ -48,8 +49,10 @@ function EventDetails({
           setChecked3(0);
         } else if (i === 4) {
           setChecked4(0);
-        } else {
+        } else if (i === 5) {
           setChecked5(0);
+        } else {
+          setChecked6(0);
         }
       }
     }
@@ -139,6 +142,20 @@ function EventDetails({
               <FormControlLabel
                 control={
                   <Checkbox
+                    checked={checked6}
+                    onChange={() => {
+                      setChecked6((prev) => !prev);
+                      handleCheck(6);
+                    }}
+                    name="checkedB"
+                    color="primary"
+                  />
+                }
+                label="Seminar"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
                     checked={checked5}
                     onChange={() => {
                       setChecked5((prev) => !prev);
@@ -177,7 +194,7 @@ function EventDetails({
           defaultValue={values.eventVenue}
         />
 
-        <TextField
+        {/* <TextField
           name="eventBudegt"
           label="Event Budget"
           onChange={handleChange("eventBudget")}
@@ -187,7 +204,7 @@ function EventDetails({
           type="number"
           className={classes.input}
           defaultValue={values.eventBudget}
-        />
+        /> */}
       </Grid>
       <Button color="primary" className={classes.button} onClick={handleNext}>
         Next

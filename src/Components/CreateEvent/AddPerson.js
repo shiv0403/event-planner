@@ -1,23 +1,35 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 
 import "./AddPerson.css";
 
 function AddPerson({ name, email }) {
+  const [isAdded, setIsAdded] = useState(true);
+
+  const handleAdd = () => {
+    setIsAdded((prev) => !prev);
+  };
+
   return (
-    <div className="search__person">
-      <div className="sp__details">
-        <div className="sp__details__avatar">
+    <div className="add__person">
+      <div className="ap__details">
+        <div className="ap__details__avatar">
           <Avatar alt={name} src="/static/images/avatar/1.jpg" />
         </div>
-        <div className="sp__details__cred">
+        <div className="ap__details__cred">
           <h3>{name}</h3>
           <p>{email}</p>
         </div>
       </div>
 
-      <div className="sp__add">
-        <button type="submit">Add</button>
+      <div className="ap__add">
+        <button
+          type="submit"
+          onClick={handleAdd}
+          className={isAdded ? "addButton" : "addedButton"}
+        >
+          {isAdded ? "Invite" : "Invited"}
+        </button>
       </div>
     </div>
   );

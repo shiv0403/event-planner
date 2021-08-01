@@ -1,0 +1,92 @@
+.eventInfo {
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+}
+
+.eventInfo__budget {
+  background-color: #eee;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.eventInfo__budget__main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eventInfo__budget__details > p {
+  color: gray;
+}
+
+.eventInfo__budget__details > h3 {
+  font-size: 2rem;
+  margin-top: 7px;
+}
+
+.eventInfo__budget__details > h4 {
+  font-size: 1.5rem;
+  margin-top: 7px;
+}
+
+.eventInfo__budget__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.eventInfo__budget__buttons > button {
+  padding: 7px 3px;
+  width: 130px;
+  border: 1px #244ed8 solid;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  background-color: #fff;
+  font-weight: 800;
+  color: #244ed8;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.eventInfo__budget__buttons > button:hover {
+  background-color: RGBA(36, 78, 216, 0.1);
+  box-shadow: inset 0 0 0 1.5px #244ed8;
+  transition: all 0.3s;
+}
+
+.eventInfo__people {
+  height: 58vh;
+  overflow-y: scroll;
+}
+
+.scroll .inner {
+  height: 300%;
+  width: 100%;
+  content: ".";
+}
+.eventInfo__people::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.eventInfo__people::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.eventInfo__people::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.eventInfo__people::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.eventInfo__people::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
