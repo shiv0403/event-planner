@@ -1,0 +1,54 @@
+.logFile__data {
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 85vh;
+  color: #6a5d5d;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+}
+
+.logFile__data tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logFile__data td {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.logFile__data tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
+
+.scroll .inner {
+  height: 300%;
+  width: 100%;
+  content: ".";
+}
+
+.logFile__data::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.logFile__data::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.logFile__data::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.logFile__data::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.logFile__data::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}

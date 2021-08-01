@@ -19,6 +19,9 @@
 .eventInfo__person__details > p {
   margin-left: 20px;
   font-size: 1.1rem;
+  /* letter-spacing: 1px; */
+  font-weight: 700;
+  color: #707070;
 }
 
 .eventInfo__person__money {
@@ -29,4 +32,5 @@
 .eventInfo__person__money > p {
   font-weight: 800;
   font-size: 1.3rem;
+  color: #16ba1f;
 }

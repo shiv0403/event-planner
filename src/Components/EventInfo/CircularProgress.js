@@ -8,16 +8,16 @@ function CircularProgress() {
   const [valueEnd, setValueEnd] = React.useState(66);
 
   return (
-    <div className="" style={{ width: 100, height: 100 }}>
+    <div className="" style={{ width: 130, height: 130 }}>
       <ProgressProvider valueStart={10} valueEnd={valueEnd}>
         {(value) => (
           <CircularProgressbar
             value={value}
             text={`${value}%`}
             styles={buildStyles({
-              textColor: "green",
-              pathColor: "#244ed8",
-              trailColor: "#ddd",
+              textColor: "#fff",
+              pathColor: "#fff",
+              trailColor: "rgb(256,0,87)",
               textSize: "20px",
             })}
           />
