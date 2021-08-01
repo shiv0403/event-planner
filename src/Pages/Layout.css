@@ -1,0 +1,16 @@
+.pageWrapper {
+    margin-left: 240px;
+}
+
+input,
+textarea,
+button,
+select, a, div {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@media screen and (max-width:900px) {
+    .pageWrapper{
+        margin-left: 0px;
+    }
+}

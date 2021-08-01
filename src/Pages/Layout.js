@@ -1,15 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Sidebar from '../Components/Sidebar/Sidebar'
 import Header from '../Components/Header/Header'
 import Mainbody from '../Components/MainBody/Mainbody'
+import './Layout.css';
 
 function Layout() {
+    const [toggleSidebar, setToggleSidebar] = useState(false)
     return (
         <div>
-            <Sidebar/>
-             <div className="pageWrapper" style={{marginLeft:"240px"}}>
-                <Header/>
-                <Mainbody/> {/* abhi toh aise hi bna diya hai yeh function, baad me sochte hai structure */}
+            <Sidebar toggleSidebar={toggleSidebar} />
+             <div className="pageWrapper">
+                <Header toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar} />
+                <Mainbody/>
              </div>
         </div>
     )

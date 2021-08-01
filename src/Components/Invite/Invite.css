@@ -1,0 +1,67 @@
+.inviteBox {
+    border-bottom: 1px solid #E2E8F0;
+}
+.inviteBox,.inviteInfo,.inviteOptions,.inviteOption{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inviteOption{
+    justify-content: center;
+}
+.inviteInfo{
+    padding: 5px;
+    align-items: flex-start;
+}
+
+.inviteEventProfilePhoto img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.inviteEventName,.inviteEventOwner{
+    margin-left: 5px;
+   
+}
+.inviteEventName,.notifText{
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width:200px;
+    color: #3f495a;
+    font-weight: bold;
+    margin-top: 4px;
+    letter-spacing: 0.4px;
+}
+.notifText{
+    width: 300px;
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+.inviteEventOwner{
+    font-size: 10px;
+    color: #767779;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.inviteOption{
+    margin-right: 5px;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    border:1px solid #3f495a;
+    cursor: pointer;
+    transition: ease 0.1s;
+}
+.inviteOption .fa-check {
+    color: #198c19;
+}
+.inviteOption .fa-times {
+    color: red;
+}
+.inviteOption:hover{
+    transform: scale(1.1);
+}

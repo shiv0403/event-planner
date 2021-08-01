@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "./Components/SearchModal/SearchModal";
+// import Modal from "./Components/SearchModal/SearchModal";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
 import Layout from "./Pages/Layout";
@@ -11,12 +11,12 @@ import LogFile from "./Components/LogFile/LogFile";
 function App() {
   return (
     <div className="App">
-      {/* <Layout /> */}
+      <Layout />
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
-      <EventInfo />
-      <LogFile />
+      {/* <EventInfo />
+      <LogFile /> */}
     </div>
   );
 }

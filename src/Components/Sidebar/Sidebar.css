@@ -1,36 +1,29 @@
+
 .sidebarContainer {
-  width: 240px;
-  height: 100%;
-  position: fixed;
-  border-right: 1px solid #e2e8f0;
-  top: 0px;
-  left: 0px;
-  padding: 24px;
-  z-index: 100;
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    border-right: 1px solid #E2E8F0;
+    top:0px;
+    left: 0px;
+    padding: 24px;
+    z-index: 30;
+    padding-top: 12px;
 }
-.topSidebar {
-  display: flex;
-  align-items: center;
+.topSidebar{
+    display: flex;
+    align-items: center;
 }
-.logo {
-  width: 40px;
-  height: 40px;
+
+
+.sectionHeading{
+    /* padding-left: 12px; */
+    letter-spacing: 1px;
+    font-size: 16px;
+    color:#A0AEC0;
+    margin-top: 24px;
 }
-.brandName {
-  color: #2d3748;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin-left: 16px;
-}
-.sectionHeading {
-  /* padding-left: 12px; */
-  letter-spacing: 1px;
-  font-size: 16px;
-  color: #a0aec0;
-  margin-top: 24px;
-}
-.pageLink {
+.pageLink{
   margin-top: 8px;
   text-decoration: none;
   color: #4b4dbd;
@@ -48,8 +41,16 @@
   font-size: 16px;
 }
 
-@media screen and (max-width: 600px) {
-  .sidebarContainer {
+.sidebarContainer.show{
     left: -240px;
-  }
+}
+
+@media screen and (max-width:900px) {
+    .sidebarContainer{
+        left: -240px;
+        transition: 0.25s ease;
+    }
+    .sidebarContainer.show{
+        left: 0px;
+    }
 }
