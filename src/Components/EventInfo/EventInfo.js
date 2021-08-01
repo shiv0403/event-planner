@@ -12,10 +12,12 @@ function EventInfo() {
     {
       name: "Shivansh Gupta",
       money: "4000",
+      isAdmin: true,
     },
     {
       name: "Himalaya Gupta",
       money: "5000",
+      isAdmin: true,
     },
     {
       name: "Priyansh Singh",
@@ -66,7 +68,13 @@ function EventInfo() {
       </div>
       <div className="eventInfo__people">
         {people.map((person) => {
-          return <EventInfoPerson name={person.name} money={person.money} />;
+          return (
+            <EventInfoPerson
+              name={person.name}
+              money={person.money}
+              isAdmin={person.isAdmin}
+            />
+          );
         })}
       </div>
     </div>

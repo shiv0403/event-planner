@@ -1,0 +1,142 @@
+export const data = [
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+  {
+    from: "Shivansh Gupta",
+    to: "Himalaya Gupta",
+    amount: "2000",
+    date: "1-8-2021",
+  },
+];

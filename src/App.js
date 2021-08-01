@@ -6,15 +6,17 @@ import Layout from "./Pages/Layout";
 import Chatbox from "./Components/Chatbox/Chatbox";
 import CreateEvent from "./Components/CreateEvent/CreateEvent";
 import EventInfo from "./Components/EventInfo/EventInfo";
+import LogFile from "./Components/LogFile/LogFile";
 
 function App() {
   return (
     <div className="App">
-      {/* <Layout />
-      <Login /> */}
+      {/* <Layout /> */}
+      {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
       <EventInfo />
+      <LogFile />
     </div>
   );
 }
