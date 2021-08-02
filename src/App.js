@@ -11,12 +11,12 @@ import LogFile from "./Components/LogFile/LogFile";
 function App() {
   return (
     <div className="App">
-      <Layout />
+      {/* <Layout /> */}
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
-      {/* <EventInfo />
-      <LogFile /> */}
+      {/* <EventInfo /> */}
+      <LogFile />
     </div>
   );
 }

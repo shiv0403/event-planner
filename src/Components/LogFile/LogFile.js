@@ -10,13 +10,13 @@ function LogFile() {
   return (
     <div className="logFile__data">
       {info.map((transaction) => (
-        <tr>
-          <td>{transaction.from}</td>
-          <TrendingFlatIcon />
-          <td>{transaction.to}</td>
-          <td>{transaction.amount}</td>
-          <td>{transaction.date}</td>
-        </tr>
+        <Transaction
+          from={transaction.from}
+          amount={transaction.amount}
+          task={transaction.task}
+          date={transaction.date}
+          to={transaction.to}
+        />
       ))}
     </div>
   );
