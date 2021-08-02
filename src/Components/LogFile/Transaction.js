@@ -5,7 +5,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 
 import "./Transaction.css";
 import shivansh from "./shivansh.png";
-import TransDetails from "./TransDetails";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
