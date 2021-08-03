@@ -5,7 +5,8 @@ import Mainbody from '../Components/MainBody/Mainbody'
 import './Layout.css';
 
 function Layout() {
-    const [toggleSidebar, setToggleSidebar] = useState(false)
+    const [toggleSidebar, setToggleSidebar] = useState(false);
+    window.scrollTo(0,1);
     return (
         <div>
             <Sidebar toggleSidebar={toggleSidebar} />

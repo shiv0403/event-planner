@@ -1,10 +1,10 @@
 import React from 'react'
 import './Card.css'
 
-function Card() {
+function Card({imgNo}) {
     return (
         <div className="eventCard" tabIndex={0}>
-        <div className="cardTopSection">
+        <div className="cardTopSection" style={{backgroundImage: `url("0${imgNo}.jpeg")`}}>
           <div className="cardPhoto">
             <img src="brandLogo.svg" />
           </div>

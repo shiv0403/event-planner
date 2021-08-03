@@ -1,3 +1,8 @@
 .swiper-slide{
     margin-right: 15px;
 }
+.swiper-slide:focus{
+    border: none;
+    outline-width: none!important;
+outline: 0px solid #fff!important;
+}

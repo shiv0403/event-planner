@@ -15,9 +15,10 @@
     position: relative;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    background-image: url('../../images/birthdayCoverImage.jpg');
     background-size: cover;
+    background-position: center;
 }
+
 .cardPhoto {
     position: absolute;;
     bottom: -35px;
@@ -39,7 +40,7 @@
     padding: 5px;
 }
 .eventName {
-    color: #3f495a;
+    color: #3a404b;
     font-weight: 400px;
     padding: 5px;
     text-overflow: ellipsis;
@@ -89,7 +90,8 @@
 .peopleInEvent p {
     position: absolute;
     bottom: -12px;
-    color: #767779;
+    color: #707070;
+    font-weight: 700;
     font-size: 12px;
     left: 65px;
     width: 200px;
@@ -103,7 +105,8 @@
     overflow: hidden;
 }
 .eventVenue, .eventDate{
-    color:#767779;
+    color:#707070;
+    font-weight: 600;
     font-size: 0.8rem;
     margin-left: 5px;
     margin-bottom: 5px;

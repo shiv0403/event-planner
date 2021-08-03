@@ -15,8 +15,8 @@ function App() {
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
-      {/* <EventInfo />
-      <LogFile /> */}
+       {/* <EventInfo /> */}
+      {/* <LogFile />  */}
     </div>
   );
 }
