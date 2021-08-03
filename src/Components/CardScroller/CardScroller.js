@@ -57,8 +57,6 @@ function CardScroller() {
         <div>
             <Swiper
       slidesPerView={noOfSlides}
-    //   onSlideChange={() => console.log('slide change')}
-    //   onSwiper={(swiper) => console.log(swiper)}
     >
         {slides}
     </Swiper>

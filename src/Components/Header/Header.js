@@ -7,7 +7,7 @@ import { events } from "../eventsData";
 function Header({ toggleSidebar, setToggleSidebar }) {
   const invites = [];
   const notifications = [];
-  // const searchResultsArray = [];
+
 
   const [showNotifications, setshowNotifications] = useState(false);
   const [showInvites, setShowInvites] = useState(false);
@@ -191,10 +191,20 @@ function Header({ toggleSidebar, setToggleSidebar }) {
           mobileSearchTab ? "mobileSearchResults show" : "mobileSearchResults"
         }
       >
+        <div className="searchBarMobile">
+       
+        <input type="text" value={searchText} onInput={(event) => handleEventSearch(event)} placeholder={"Search Your events..."} />
         <i
-          className="fa fa-arrow-left"
-          onClick={() => setMobileSearchTab(!mobileSearchTab)}
+          className={searchText ? "fa fa-times" : "fa fa-arrow-left"} style={{position:"absolute",bottom:"22px",right:"20px", color:"#707070"}}
+          onClick={() => {
+            setSearchText('');
+            setMobileSearchTab(!mobileSearchTab);
+          }}
         ></i>
+        </div>
+        <div className="searchResultaMobile">
+        {searchResultsArray.length ? searchResultsArray : <p style={{ marginTop: '20px', fontSize:"14px", color: '#808080', textAlign: 'center', paddingBottom:"20px"}}>No search Result Found <br /> with keyword "{searchText}"</p>}
+        </div>
       </div>
       <div className="bottomMobileNavbar">
         <a
@@ -202,7 +212,7 @@ function Header({ toggleSidebar, setToggleSidebar }) {
           className="invites"
           title="Invites"
           onClick={handleInviteClick}
-        >
+        >   
           <i
             className={showInvites ? "fa fa-times fa-lg" : "fa fa-user-plus"}
           />
