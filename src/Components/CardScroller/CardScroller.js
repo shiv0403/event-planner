@@ -7,6 +7,8 @@ import './CardScroller.css'
 
 SwiperCore.use([Navigation,Pagination])
 function CardScroller() {
+    const imagesNo = [1,2,3,4,5];
+
     const slides = [];
     const abortConst = new AbortController();
     const [noOfSlides, setNoOfSlides] = useState(1.3);
@@ -41,7 +43,7 @@ function CardScroller() {
 
     for (let i =0;i<5;i++){
         slides.push(
-            <SwiperSlide key={i}><Card key={i}/></SwiperSlide>
+            <SwiperSlide key={i}><Card key={i} imgNo={imagesNo[Math.floor(Math.random() * imagesNo.length)]} /></SwiperSlide>
         )
     }
     useEffect(() => {
@@ -55,8 +57,6 @@ function CardScroller() {
         <div>
             <Swiper
       slidesPerView={noOfSlides}
-    //   onSlideChange={() => console.log('slide change')}
-    //   onSwiper={(swiper) => console.log(swiper)}
     >
         {slides}
     </Swiper>

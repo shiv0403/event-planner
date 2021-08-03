@@ -1,12 +1,12 @@
 import React from 'react'
 import './Card.css'
 
-function Card() {
+function Card({imgNo}) {
     return (
         <div className="eventCard" tabIndex={0}>
-        <div className="cardTopSection">
+        <div className="cardTopSection" style={{backgroundImage: `url("0${imgNo}.jpeg")`}}>
           <div className="cardPhoto">
-            <img src="brandLogo.svg" />
+            <img src="brandLogo.svg" alt="Event Profile Photo" />
           </div>
         </div>
         <h3 className="eventName" title="Celebrating Priyansh's Birthday">Celebrating Priyansh's Birthday</h3>
@@ -19,7 +19,7 @@ function Card() {
             <img src="Amy_Baker25.jpg" className="imgTwo" alt="" />
             <img src="sample_image.png" className="imgThree" alt="" />
             <p style={{marginLeft: '5px'}}>Batman, Amy, Rajat and 2 more are in this event</p>
-          </div>
+          </div> {/* Will make this a component later on */}
           <i className="fa fa-user-plus" />
         </div>
       </div>

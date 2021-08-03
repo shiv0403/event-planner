@@ -2,17 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Invite.css'
 
-function Invite({type}) {
+function Invite({type,event}) {
   if (type == "invite"){
     return(
-      <div className="inviteBox">
+      <div className="inviteBox" tabIndex={0}>
       <div className="inviteInfo">
         <div className="inviteEventProfilePhoto">
-          <img src="Amy_Baker25.jpg" alt="" />
+          <img src={event.eventPhoto} alt="" />
         </div>
         <div className="inviteEventNameAndOwner">
-          <p className="inviteEventName">Celebrating Priyansh's Birthday</p>
-          <p className="inviteEventOwner">Priyansh</p>
+          <p className="inviteEventName">{event.title}</p>
+          <p className="inviteEventOwner">{event.owner}</p>
         </div>
       </div>
       <div className="inviteOptions">
@@ -23,10 +23,10 @@ function Invite({type}) {
     )
   }else if (type == "notif") {
     return(
-      <div className="inviteBox">
+      <div className="inviteBox" tabIndex={0}>
       <div className="inviteInfo">
         <div className="inviteEventProfilePhoto">
-          <img src="Amy_Baker25.jpg" alt="" />
+          <img src={event.eventPhoto} alt="" />
         </div>
         <div className="inviteEventNameAndOwner">
           <p className="notifText">Only 1 day left for your assigned task </p>
@@ -37,14 +37,14 @@ function Invite({type}) {
     )
   }else {
     return(
-      <div className="inviteBox">
+      <div className="inviteBox" tabIndex={0}>
         <div className="inviteInfo">
           <div className="inviteEventProfilePhoto">
-            <img src="batman.jpg" alt="" />
+            <img src={event.eventPhoto} alt="" />
           </div>
           <div className="inviteEventNameAndOwner">
-            <p className="inviteEventName" style={{width: '320px'}}>Celebrating Priyansh's Birthday</p>
-            <p className="inviteEventOwner">Naman</p>
+            <p className="inviteEventName" style={{width: '320px'}}>{event.title}</p>
+            <p className="inviteEventOwner">{event.owner} &middot; {event.category}</p>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ function Mainbody() {
                 <h4 className="eventsCollectionName">Live Events</h4>
                 <CardScroller/>
             </div>
-            <div className="eventCardContainer" style={{marginTop:"40px"}}>
+            <div className="eventCardContainer" style={{marginTop:"40px", marginBottom:"60px"}}>
                 <h4 className="eventsCollectionName">Completed Events</h4>
                 <CardScroller/>
             </div>
