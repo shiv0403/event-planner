@@ -9,6 +9,8 @@ import Chatbox from "./Components/Chatbox/Chatbox";
 import CreateEvent from "./Components/CreateEvent/CreateEvent";
 import EventInfo from "./Components/EventInfo/EventInfo";
 import LogFile from "./Components/LogFile/LogFile";
+import EventPage from "./Pages/EventPage/EventPage";
+import AddTaks from "./Components/AddTask/AddTaks";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
       {/* <EventInfo /> */}
-      <LogFile />
+      {/* <LogFile /> */}
+      {/* <EventPage /> */}
+      <AddTaks />
     </div>
   );
 }

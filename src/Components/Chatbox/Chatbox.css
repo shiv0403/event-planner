@@ -1,7 +1,8 @@
 .chat {
-  width: 50%;
+  /* width: 50%; */
   margin: auto;
   border-radius: 10px;
+  flex: 1;
 }
 
 .chat__header {
