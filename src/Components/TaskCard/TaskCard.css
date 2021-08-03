@@ -1,39 +1,44 @@
-.taskCard{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border:1px solid #E2E8F0;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.75);
-    margin-bottom: 6px;
-    color: white;
+.taskCard {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.75);
+  margin-bottom: 6px;
+  color: white;
+  flex: 1;
 }
-.taskCard h3, .taskCard p, .taskCard i{
-     color: white;
+.taskCard h3,
+.taskCard p,
+.taskCard i {
+  color: white;
 }
 
-.taskNameAndPayOption,.payBtn,.taskDueDateAndPayTask{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.taskNameAndPayOption,
+.payBtn,
+.taskDueDateAndPayTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.taskNameAndPayOption{
-    align-items: flex-start;
-    padding-bottom: 10px;
-    border-bottom: 1px solid white;
+.taskNameAndPayOption {
+  align-items: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
 }
-.taskNameAndPayOption p{
-    font-size: 12px;
-    /* font-weight: 600; */
+.taskNameAndPayOption p {
+  font-size: 12px;
+  /* font-weight: 600; */
 }
 .taskNameAndPayOption h3 {
-    margin-top: 3px;
+  margin-top: 3px;
 }
-.eventDueDate{
-    font-size: 13px;
+.eventDueDate {
+  font-size: 13px;
 }
 /* .taskName{
     text-overflow: ellipsis;
@@ -41,44 +46,45 @@
     overflow: hidden;
     width: 180px;
 } */
-.taskOwner{
-    justify-content: center;
-    /* border:2px solid white; */
+.taskOwner {
+  justify-content: center;
+  /* border:2px solid white; */
 }
-.taskOwner,.taskOwner img {
-    width:38px;
-    height: 38px;
-    border-radius: 50%;
+.taskOwner,
+.taskOwner img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
 }
 .taskOwner img {
-    border: 2px solid white;
-    object-fit: cover;
+  border: 2px solid white;
+  object-fit: cover;
 }
-.eventDueDate{
-    padding-left: 4px;
+.eventDueDate {
+  padding-left: 4px;
 }
-.taskDueDateAndPayTask{
- padding-top: 10px;
+.taskDueDateAndPayTask {
+  padding-top: 10px;
 }
 .taskDueDateAndPayTask i {
-    margin-right: 4px;
+  margin-right: 4px;
 }
 .payTask i {
-    cursor: pointer;
-    /* perspective: 200p */
-    transition: 0.25s ease;
+  cursor: pointer;
+  /* perspective: 200p */
+  transition: 0.25s ease;
 }
-.payTask i:hover{
-    transform: perspective(100px) translateZ(40px) rotate(360deg);
-}
-
-.disabled{
-    opacity: 0.4;
-    pointer-events: none;
+.payTask i:hover {
+  transform: perspective(100px) translateZ(40px) rotate(360deg);
 }
 
-@media screen and (max-width:900px) {
-    .payTask i:hover{
-        transform: none;
-    }
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 900px) {
+  .payTask i:hover {
+    transform: none;
+  }
 }
