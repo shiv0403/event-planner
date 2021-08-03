@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./TaskCard.css";
 
-function TaskCard({ isComplete, bgColor }) {
+function TaskCard({isComplete}) {
   return (
-      <div className={isComplete ? "taskCard disabled" : "taskCard"} style={{ backgroundColor: bgColor}}>
+      <div className={isComplete ? "taskCard disabled" : "taskCard"} >
         <div className="taskNameAndPayOption">
           <div>
             <h3 className="taskName">Football</h3>

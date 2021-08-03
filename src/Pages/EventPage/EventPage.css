@@ -1,4 +1,34 @@
 .eventPageContainer{
- /* padding: 10px; */
  display: flex;
+ flex-wrap: wrap;
 }
+.taskContainer{
+    padding: 10px 15px;
+    height:100vh;
+    overflow:auto;
+}
+.taskContainer::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .taskContainer::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .taskContainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .taskContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .taskContainer::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+ @media screen and(max-width:600px) {
+    .eventPageContainer{
+        display: block;
+        flex-direction: column;
+    }     
+ } 
