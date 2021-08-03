@@ -5,12 +5,11 @@ import Modal from "./Components/SearchModal/SearchModal";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
 import Layout from "./Pages/Layout";
-import Chatbox from "./Components/Chatbox/Chatbox";
-import CreateEvent from "./Components/CreateEvent/CreateEvent";
+// import Chatbox from "./Components/Chatbox/Chatbox";
+// import CreateEvent from "./Components/CreateEvent/CreateEvent";
 import EventInfo from "./Components/EventInfo/EventInfo";
-import LogFile from "./Components/LogFile/LogFile";
 import EventPage from "./Pages/EventPage/EventPage";
-import AddTaks from "./Components/AddTask/AddTaks";
+// import LogFile from "./Components/LogFile/LogFile";
 
 function App() {
   return (
@@ -19,10 +18,11 @@ function App() {
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
-      {/* <EventInfo /> */}
-      {/* <LogFile /> */}
-      {/* <EventPage /> */}
-      <AddTaks />
+       {/* <EventInfo /> */}
+      {/* <LogFile />  */}
+      {/* <CreateTaskCard/> */}
+      {/* <TaskCard/> */}
+      <EventPage/>
     </div>
   );
 }
