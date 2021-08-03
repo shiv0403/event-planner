@@ -1,4 +1,4 @@
-.eventPage__container {
-  display: flex;
-  flex-direction: row;
+.eventPageContainer{
+ /* padding: 10px; */
+ display: flex;
 }
