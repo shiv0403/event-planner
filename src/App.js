@@ -7,13 +7,14 @@ import TaskCard from "./Components/TaskCard/TaskCard";
 import Layout from "./Pages/Layout";
 // import Chatbox from "./Components/Chatbox/Chatbox";
 // import CreateEvent from "./Components/CreateEvent/CreateEvent";
-// import EventInfo from "./Components/EventInfo/EventInfo";
+import EventInfo from "./Components/EventInfo/EventInfo";
+import EventPage from "./Pages/EventPage/EventPage";
 // import LogFile from "./Components/LogFile/LogFile";
 
 function App() {
   return (
     <div className="App">
-      <Layout />
+      {/* <Layout /> */}
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
@@ -21,6 +22,7 @@ function App() {
       {/* <LogFile />  */}
       {/* <CreateTaskCard/> */}
       {/* <TaskCard/> */}
+      <EventPage/>
     </div>
   );
 }

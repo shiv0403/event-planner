@@ -1,12 +1,13 @@
 .eventInfo {
-  width: 30%;
-  margin: auto;
+  max-width: 360px;
+  width: 100%;
   padding: 10px;
-  border-radius: 20px;
-  margin-top: 30px;
-  box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  /* border-radius: 20px; */
+  /* box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75); */
+  border-right: 1px solid #E2E8F0;
+
 }
 
 .eventInfo__budget {
@@ -46,9 +47,9 @@
 
 .eventInfo__budget__buttons > button {
   padding: 10px 15px;
-  width: 180px;
+  width: 130px;
   border: 1px #244ed8 solid;
-  font-size: 1.1rem;
+  font-size: 16px;
   border-radius: 20px;
   background-color: #fff;
   font-weight: 800;
@@ -65,7 +66,7 @@
 }
 
 .eventInfo__people {
-  height: 58vh;
+  height: 60vh;
   overflow-y: scroll;
 }
 
