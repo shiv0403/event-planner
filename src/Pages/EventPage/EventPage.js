@@ -16,9 +16,9 @@ function EventPage() {
                 <TaskCard isComplete={false} bgColor="#353b48" />
                 <TaskCard isComplete={false} bgColor="#353b48" />
             </div> */}
-            <Chatbox/>
+            {/* <Chatbox/> */}
         </div>
     )
 }
 
-export default EventPage
+export default EventPage;
