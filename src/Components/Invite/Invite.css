@@ -1,6 +1,9 @@
 .inviteBox {
     border-bottom: 1px solid #E2E8F0;
 }
+.inviteBox:last-of-type{
+    border: none;
+}
 .inviteBox,.inviteInfo,.inviteOptions,.inviteOption{
     display: flex;
     justify-content: space-between;
