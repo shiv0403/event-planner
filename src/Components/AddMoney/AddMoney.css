@@ -1,0 +1,23 @@
+.addMoney__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addMoney__details {
+  color: gray;
+}
+
+.addMoney__note > p {
+  color: gray;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
