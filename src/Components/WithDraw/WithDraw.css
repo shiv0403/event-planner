@@ -1,0 +1,23 @@
+.withDraw__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.withDraw__details {
+  color: gray;
+}
+
+.withDraw__note > p {
+  color: gray;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

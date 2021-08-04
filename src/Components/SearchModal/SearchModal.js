@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModal() {
+export default function TransitionsModal({ open, handleOpen }) {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [data, setData] = useState([
     {
       name: "Shivansh Gupta",
@@ -68,19 +68,16 @@ export default function TransitionsModal() {
     },
   ]);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
-    setOpen(false);
+    handleOpen();
   };
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Search
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

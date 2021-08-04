@@ -3,17 +3,22 @@ import "./Header.css";
 import Invite from "../Invite/Invite";
 import BrandName from "../BrandName/BrandName";
 import { events } from "../eventsData";
+import CreateEvent from "../CreateEvent/CreateEvent";
 
 function Header({ toggleSidebar, setToggleSidebar }) {
   const invites = [];
   const notifications = [];
 
-
   const [showNotifications, setshowNotifications] = useState(false);
   const [showInvites, setShowInvites] = useState(false);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [mobileSearchTab, setMobileSearchTab] = useState(false);
-  const [searchResultsArray, setSearchResultsArray] = useState([])
+  const [searchResultsArray, setSearchResultsArray] = useState([]);
+  const [createEvent, setCreateEvent] = useState(false);
+
+  const handleAddEvent = () => {
+    setCreateEvent((prev) => !prev);
+  };
 
   const handleInviteClick = () => {
     setShowInvites(!showInvites);
@@ -30,33 +35,35 @@ function Header({ toggleSidebar, setToggleSidebar }) {
   };
   const fillData = (data, array, types) => {
     for (let i = 0; i < data.length; i++) {
-      array.push(<Invite key={i} type={types} event = {data[i]} />);
+      array.push(<Invite key={i} type={types} event={data[i]} />);
     }
   };
 
   const fillSearchResults = (searchResults) => {
     const array = [];
-   for (let i = 0;i<searchResults.length ; i++){
-     array.push(<Invite key={i} type="search" event = {searchResults[i]} />)
-   }
-   setSearchResultsArray(array);
-  }
+    for (let i = 0; i < searchResults.length; i++) {
+      array.push(<Invite key={i} type="search" event={searchResults[i]} />);
+    }
+    setSearchResultsArray(array);
+  };
 
   const performLiveSearch = (searchText) => {
-    let matches = events.filter(event => {
-      const regex = new RegExp(`^${searchText}`,'gi');
-      return event.title.match(regex) || event.category.match(regex) || event.owner.match(regex);
-    })
+    let matches = events.filter((event) => {
+      const regex = new RegExp(`^${searchText}`, "gi");
+      return (
+        event.title.match(regex) ||
+        event.category.match(regex) ||
+        event.owner.match(regex)
+      );
+    });
     // console.log(matches);
     fillSearchResults(matches);
-  }
+  };
   const handleEventSearch = (e) => {
     setSearchText(e.target.value);
     performLiveSearch(e.target.value);
-  
-  }
+  };
 
- 
   fillData(events, invites, "invite"); // TEMPORARY , state banake behtar rhega
   fillData(events, notifications, "notif");
 
@@ -90,12 +97,29 @@ function Header({ toggleSidebar, setToggleSidebar }) {
               searchText ? "mainSearchResults show" : "mainSearchResults"
             }
           >
-            {searchResultsArray.length ? searchResultsArray : <p style={{ marginTop: '20px', fontSize:"14px", color: '#808080', textAlign: 'center', paddingBottom:"20px"}}>No search Result Found <br /> with keyword "{searchText}"</p>}
+            {searchResultsArray.length ? (
+              searchResultsArray
+            ) : (
+              <p
+                style={{
+                  marginTop: "20px",
+                  fontSize: "14px",
+                  color: "#808080",
+                  textAlign: "center",
+                  paddingBottom: "20px",
+                }}
+              >
+                No search Result Found <br /> with keyword "{searchText}"
+              </p>
+            )}
           </div>
         </div>
-        <button className="addEventBtn">
+        <button className="addEventBtn" onClick={handleAddEvent}>
           <i className="fa fa-plus"></i>Add Event
         </button>
+        {createEvent && (
+          <CreateEvent open={createEvent} handleAddEvent={handleAddEvent} />
+        )}
       </div>
       <div className="headerIcons">
         <a
@@ -192,18 +216,42 @@ function Header({ toggleSidebar, setToggleSidebar }) {
         }
       >
         <div className="searchBarMobile">
-       
-        <input type="text" value={searchText} onInput={(event) => handleEventSearch(event)} placeholder={"Search Your events..."} />
-        <i
-          className={searchText ? "fa fa-times" : "fa fa-arrow-left"} style={{position:"absolute",bottom:"22px",right:"20px", color:"#707070"}}
-          onClick={() => {
-            setSearchText('');
-            setMobileSearchTab(!mobileSearchTab);
-          }}
-        ></i>
+          <input
+            type="text"
+            value={searchText}
+            onInput={(event) => handleEventSearch(event)}
+            placeholder={"Search Your events..."}
+          />
+          <i
+            className={searchText ? "fa fa-times" : "fa fa-arrow-left"}
+            style={{
+              position: "absolute",
+              bottom: "22px",
+              right: "20px",
+              color: "#707070",
+            }}
+            onClick={() => {
+              setSearchText("");
+              setMobileSearchTab(!mobileSearchTab);
+            }}
+          ></i>
         </div>
         <div className="searchResultaMobile">
-        {searchResultsArray.length ? searchResultsArray : <p style={{ marginTop: '20px', fontSize:"14px", color: '#808080', textAlign: 'center', paddingBottom:"20px"}}>No search Result Found <br /> with keyword "{searchText}"</p>}
+          {searchResultsArray.length ? (
+            searchResultsArray
+          ) : (
+            <p
+              style={{
+                marginTop: "20px",
+                fontSize: "14px",
+                color: "#808080",
+                textAlign: "center",
+                paddingBottom: "20px",
+              }}
+            >
+              No search Result Found <br /> with keyword "{searchText}"
+            </p>
+          )}
         </div>
       </div>
       <div className="bottomMobileNavbar">
@@ -212,11 +260,11 @@ function Header({ toggleSidebar, setToggleSidebar }) {
           className="invites"
           title="Invites"
           onClick={handleInviteClick}
-        >   
+        >
           <i
             className={showInvites ? "fa fa-times fa-lg" : "fa fa-user-plus"}
           />
-        <p>Invites</p>
+          <p>Invites</p>
         </a>
         <a
           href="#"
@@ -227,9 +275,18 @@ function Header({ toggleSidebar, setToggleSidebar }) {
           <i className="fa fa-search" />
           <p>Search</p>
         </a>
-        <a href="#" className="" style={{display:"flex",justifyContent:"center"}} title="Add Event">
+        <a
+          href="#"
+          className=""
+          style={{ display: "flex", justifyContent: "center" }}
+          title="Add Event"
+        >
           <div className="addMobileEvent">
-           <i className="fa fa-plus" style={{ fontSize: "21px" }} />
+            <i
+              className="fa fa-plus"
+              style={{ fontSize: "21px" }}
+              onClick={handleAddEvent}
+            />
           </div>
         </a>
         <a

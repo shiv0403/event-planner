@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CreateEvent = () => {
+const CreateEvent = ({ open, handleAddEvent }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
   const [step, setStep] = useState(1);
   const [eventTitle, setEventTitle] = useState("");
   const [eventVenue, setEventVenue] = useState("");
@@ -84,12 +84,12 @@ const CreateEvent = () => {
     setEventCategory(e);
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
-    setOpen(false);
+    handleAddEvent();
     setTimeout(function () {
       setStep(1);
     }, 700);
@@ -97,9 +97,9 @@ const CreateEvent = () => {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
+      {/* <button type="button" onClick={handleOpen}>
         react-transition-group
-      </button>
+      </button> */}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

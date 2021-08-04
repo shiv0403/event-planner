@@ -9,7 +9,11 @@ import Layout from "./Pages/Layout";
 // import CreateEvent from "./Components/CreateEvent/CreateEvent";
 import EventInfo from "./Components/EventInfo/EventInfo";
 import EventPage from "./Pages/EventPage/EventPage";
-// import LogFile from "./Components/LogFile/LogFile";
+import AddTaks from "./Components/AddTask/AddTaks";
+import AddMoney from "./Components/AddMoney/AddMoney";
+import LogFile from "./Components/LogFile/LogFile";
+import WithDraw from "./Components/WithDraw/WithDraw";
+import TransferMoney from "./Components/TransferMoney/TransferMoney";
 
 function App() {
   return (
@@ -18,11 +22,15 @@ function App() {
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
-       {/* <EventInfo /> */}
-      {/* <LogFile />  */}
+      {/* <EventInfo /> */}
+      {/* <LogFile /> */}
       {/* <CreateTaskCard/> */}
       {/* <TaskCard/> */}
-      <EventPage/>
+      {/* <EventPage/> */}
+      {/* <AddTaks /> */}
+      {/* <AddMoney /> */}
+      {/* <WithDraw /> */}
+      <TransferMoney />
     </div>
   );
 }
