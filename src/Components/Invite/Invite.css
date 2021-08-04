@@ -1,6 +1,15 @@
 .inviteBox {
     border-bottom: 1px solid #E2E8F0;
 }
+
+@keyframes acceptAndDecline {
+    0%   {opacity: 1;}
+    25%  {opacity: 0.75;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.25;}
+    100% {opacity: 0;}
+}
+
 .inviteBox:last-of-type{
     border: none;
 }
@@ -65,6 +74,7 @@
 .inviteOption .fa-times {
     color: red;
 }
+
 .inviteOption:hover{
     transform: scale(1.1);
 }

@@ -5,7 +5,7 @@ import CardScroller from '../CardScroller/CardScroller'
 function Mainbody() {
     return (
         <div className="mainBody">
-            <div className="eventCardContainer">
+            <div className="eventCardContainer" style={{marginTop:"15px"}}>
                 <h4 className="eventsCollectionName">Live Events</h4>
                 <CardScroller/>
             </div>

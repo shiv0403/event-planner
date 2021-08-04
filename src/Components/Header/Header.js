@@ -13,7 +13,9 @@ function Header({ toggleSidebar, setToggleSidebar }) {
   const [showInvites, setShowInvites] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [mobileSearchTab, setMobileSearchTab] = useState(false);
-  const [searchResultsArray, setSearchResultsArray] = useState([])
+  const [searchResultsArray, setSearchResultsArray] = useState([]); // no redux, will use localstorage 😎
+  const [invitesList, setInvitesList] = useState([]); // needs to be implemented using Redux later on
+  const [notificationsList, setNotificationsList] = useState([]); // needs to be implemented using Redux later on
 
   const handleInviteClick = () => {
     setShowInvites(!showInvites);
@@ -28,6 +30,11 @@ function Header({ toggleSidebar, setToggleSidebar }) {
   const handleSidebarToggle = () => {
     setToggleSidebar(!toggleSidebar);
   };
+
+  const fillInvitesList = () => {
+    
+  }
+
   const fillData = (data, array, types) => {
     for (let i = 0; i < data.length; i++) {
       array.push(<Invite key={i} type={types} event = {data[i]} />);
