@@ -37,18 +37,18 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
+    borderRadius: "10px",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: "30%",
-    // height: "80vh",
     textAlign: "center",
   },
   formControl: {
-    margin: theme.spacing(1),
     minWidth: 120,
-    // maxWidth: 300,
-    marginTop: "20px",
     width: "100%",
+    margin: "auto",
+    textAlign: "left",
+    marginTop: "20px",
   },
   chips: {
     display: "flex",
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid blue",
   },
   heading: {
-    marginTop: "20px",
+    marginTop: "15px",
   },
   textArea: {
     width: "100%",

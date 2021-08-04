@@ -1,0 +1,28 @@
+.transfer__from__details > p {
+  color: gray;
+  font-weight: 800;
+}
+
+.transfer__from__details > p {
+  margin-top: 10px;
+}
+
+.transfer__from__details > h3 {
+  margin: 5px auto;
+}
+
+.transfer__bankOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.transfer__bankDetails {
+  margin-right: 20px;
+}
+
+.transfer__to > p {
+  color: gray;
+  font-weight: 800;
+}
