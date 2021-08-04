@@ -14,7 +14,7 @@ import EventPage from "./Pages/EventPage/EventPage";
 function App() {
   return (
     <div className="App">
-      {/* <Layout /> */}
+      <Layout />
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
@@ -22,7 +22,7 @@ function App() {
       {/* <LogFile />  */}
       {/* <CreateTaskCard/> */}
       {/* <TaskCard/> */}
-      <EventPage/>
+      {/* <EventPage/> */}
     </div>
   );
 }
