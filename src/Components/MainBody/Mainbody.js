@@ -14,13 +14,13 @@ function Mainbody() {
       const liveEventsData = axios.get("./events.json");
       const completedEventsData = axios.get("./events.json");
       setLoader(true);
-    //   setTimeout(() => {
+      setTimeout(() => {
         Promise.all([liveEventsData, completedEventsData]).then((values) => {
           setLiveEvents(values[0].data);
           setCompletedEvents(values[0].data);
           setLoader(false);
         });
-    //   }, 2000);
+      }, 2000);
     }
     fetchEvents();
   }, []);
