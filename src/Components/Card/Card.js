@@ -1,17 +1,7 @@
-import { Button, IconButton } from "@material-ui/core";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import React from "react";
-import { useState } from "react";
-
-import SearchModal from "../SearchModal/SearchModal";
 import "./Card.css";
 
 function Card({ imgNo }) {
-  const [addPerson, setAddPerson] = useState(false);
-  const handleInvite = () => {
-    setAddPerson((prev) => !prev);
-  };
-
   return (
     <div className="eventCard" tabIndex={0}>
       <div
@@ -44,12 +34,7 @@ function Card({ imgNo }) {
           </p>
         </div>{" "}
         {/* Will make this a component later on */}
-        {addPerson && (
-          <SearchModal open={addPerson} handleOpen={handleInvite} />
-        )}
-        <IconButton>
-          <PersonAddIcon onClick={handleInvite} />
-        </IconButton>
+        <i className="fa fa-user-plus" />
       </div>
     </div>
   );
