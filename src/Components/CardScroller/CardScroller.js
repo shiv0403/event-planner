@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 import './CardScroller.css'
 
 SwiperCore.use([Navigation,Pagination])
-function CardScroller() {
+function CardScroller({events}) {
     const imagesNo = [1,2,3,4,5];
 
     const slides = [];
@@ -40,12 +40,15 @@ function CardScroller() {
    
     window.addEventListener('resize',() => handleNoofSlides(window.innerWidth))
     
+    // events.map(event => {
 
-    for (let i =0;i<5;i++){
-        slides.push(
-            <SwiperSlide key={i}><Card key={i} imgNo={imagesNo[Math.floor(Math.random() * imagesNo.length)]} /></SwiperSlide>
-        )
-    }
+    // })
+
+    // for (let i =0;i<eve;i++){
+    //     slides.push(
+    //         <SwiperSlide key={i}><Card key={i}  /></SwiperSlide>
+    //     )
+    // }
     useEffect(() => {
         handleNoofSlides(window.innerWidth,{signal : abortConst.signal});
         return () => {
@@ -58,7 +61,8 @@ function CardScroller() {
             <Swiper
       slidesPerView={noOfSlides}
     >
-        {slides}
+        {events.map(event => <SwiperSlide key={event.id}><Card key={event.id} event = {event} /></SwiperSlide>)}
+        {/* {slides} */}
     </Swiper>
         </div>
     )

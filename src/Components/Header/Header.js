@@ -33,6 +33,11 @@ function Header({ toggleSidebar, setToggleSidebar }) {
   const handleSidebarToggle = () => {
     setToggleSidebar(!toggleSidebar);
   };
+
+  const fillInvitesList = () => {
+    
+  }
+
   const fillData = (data, array, types) => {
     for (let i = 0; i < data.length; i++) {
       array.push(<Invite key={i} type={types} event={data[i]} />);

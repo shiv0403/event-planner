@@ -1,19 +1,20 @@
 .eventInfo {
-  max-width: 360px;
-  width: 100%;
-  padding: 10px;
+  width: 420px;
+  padding: 0px;
   /* border-radius: 20px; */
   /* box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75); */
-  border-right: 1px solid #E2E8F0;
+  /* border-right: 1px solid #E2E8F0; */
 
 }
 
 .eventInfo__budget {
   background-color: #244ed8;
   padding: 30px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .eventInfo__budget__main {

@@ -3,6 +3,10 @@ import Sidebar from '../Components/Sidebar/Sidebar'
 import Header from '../Components/Header/Header'
 import Mainbody from '../Components/MainBody/Mainbody'
 import './Layout.css';
+import Analytics from './Analytics/Analytics';
+
+
+
 
 function Layout() {
     const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -13,6 +17,7 @@ function Layout() {
              <div className="pageWrapper">
                 <Header toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar} />
                 <Mainbody/>
+                {/* <Analytics/> */}
              </div>
         </div>
     )

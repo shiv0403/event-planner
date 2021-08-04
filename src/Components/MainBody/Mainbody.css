@@ -1,7 +1,15 @@
 .mainBody{
     width: 100%;
     padding: 16px;
+    /* visibility: 0;
+    opacity: 0;
+    transition: 0.25s ease; */
 }
+/* .mainBody.show{
+    opacity: 1;
+    visibility: 1;
+    transition: 0.25s ease;
+} */
 
 
 .eventsCollectionName{

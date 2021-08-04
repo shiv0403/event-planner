@@ -18,12 +18,12 @@
 }
 
 .transaction__task > h3 {
-  font-size: 1.3rem;
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
 .transaction__task > p {
-  font-size: 0.8rem;
+  font-size:12px;
 }
 
 .transaction:not(:last-child) {
@@ -38,7 +38,7 @@
 
 .transaction__money > p {
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 14px;
   color: #16ba1f;
 }
 
