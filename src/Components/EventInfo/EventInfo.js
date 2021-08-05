@@ -66,6 +66,10 @@ function EventInfo() {
           </button>
         </div>
       </div>
+      <div className="participantsDetails">
+         <p>20 Participants</p>
+         <p><i className="fa fa-user-plus"></i></p>
+       </div>
       <div className="eventInfo__people">
         {people.map((person) => {
           return (

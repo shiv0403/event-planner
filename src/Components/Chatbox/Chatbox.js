@@ -95,7 +95,7 @@ function Chatbox() {
         </div>
       </div>
 
-      <div className="chat__body">
+      <div className="chat__body" style={{backgroundImage:"url('chatBackground.jpg')"}}>
         <Message send={"yes"} />
         <Message send={"no"} />
         <Message send={"yes"} />

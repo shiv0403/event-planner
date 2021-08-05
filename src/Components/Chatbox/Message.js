@@ -10,7 +10,7 @@ function Message({ send }) {
         <div className="message">
           <div className="message__chat">
             <p className="message__name">Lorem</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet. lorem20</p>
           </div>
           <div className="message__time">12:00</div>
         </div>
