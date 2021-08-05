@@ -17,8 +17,8 @@ function EventPage() {
             <EventInfo/>
             {/* <div className="taskContainer" style={{  }}>
                 {taskArray}
-            </div>  */}
-             {/* <div className="logFileContainer">
+            </div> 
+             <div className="logFileContainer">
                 <h4>Log File</h4>
                 <LogFile/>
             </div> */}

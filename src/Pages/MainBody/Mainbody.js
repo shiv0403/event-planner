@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Mainbody.css";
-import CardScroller from "../CardScroller/CardScroller";
+import CardScroller from "../../Components/CardScroller/CardScroller";
 import axios from "axios";
 import { Translate } from "@material-ui/icons";
 
