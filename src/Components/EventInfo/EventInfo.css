@@ -61,7 +61,7 @@
 }
 
 .eventInfo__people {
-  height: 60vh;
+  height: 51vh;
   overflow-y: scroll;
 }
 
@@ -108,5 +108,6 @@
   transition: 0.25s ease;
 }
 .participantsDetails i:hover{
+  color:#535353;
   transform: perspective(100px) translateZ(20px);
 }

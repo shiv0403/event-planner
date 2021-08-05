@@ -2,8 +2,55 @@
  display: flex;
  flex-wrap: wrap;
 }
+.topHeader{
+  height:60px ;
+  background-color:white;
+  border-right: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(37, 37, 37);
+}
+.topHeader h2 {
+  padding:0px 20px 0px 10px;
+}
+.iconsSet{
+  display: flex;
+  align-items: center;
+  padding-right: 28px;
+}
+.iconsSet .fa-info-circle{
+  font-size: 24px;
+}
+.iconsSet i{
+  margin-left: 20px;
+  font-size: 20px;
+  transition: 0.25s ease;
+  color: rgb(37, 37, 37);
+}
+.iconsSet i.active{
+  color:#16ba1f;
+}
+.iconsSet i:hover{
+  color:#16ba1f;
+  /* transform:perspective(50px) translateZ(10px) rotate(360deg); */
+  /* backface-visibility: hidden; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .taskContainer{
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     height:100vh;
     overflow:auto;
 }
