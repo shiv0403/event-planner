@@ -9,20 +9,36 @@ function Mainbody() {
   const [completedEvents, setCompletedEvents] = useState([]);
   const [loader, setLoader] = useState(false);
 
+  function setEventsInLocalstorage(liveEvents,completedEvents){
+    const allEvents = liveEvents.concat(completedEvents);
+    localStorage.setItem("allEvents",JSON.stringify(allEvents));
+  }
+
   useEffect(() => {
+    const source = axios.CancelToken.source();
     async function fetchEvents() {
       const liveEventsData = axios.get("./events.json");
       const completedEventsData = axios.get("./events.json");
       setLoader(true);
-      setTimeout(() => {
+      try {
         Promise.all([liveEventsData, completedEventsData]).then((values) => {
           setLiveEvents(values[0].data);
-          setCompletedEvents(values[0].data);
+          setCompletedEvents(values[1].data);
           setLoader(false);
+          setEventsInLocalstorage(values[0].data,values[1].data);
         });
-      }, 2000);
+      }catch (error){
+        if (axios.isCancel(error)) {
+        } else {
+            throw error
+        }
+      }
     }
     fetchEvents();
+
+    return () => {
+      source.cancel(); 
+    }
   }, []);
 
   return (

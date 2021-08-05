@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./Header.css";
 import Invite from "../Invite/Invite";
 import BrandName from "../BrandName/BrandName";
-import { events } from "../eventsData";
+// import { events } from "../eventsData";
 import CreateEvent from "../CreateEvent/CreateEvent";
 
 function Header({ toggleSidebar, setToggleSidebar }) {
   const invites = [];
   const notifications = [];
-
+  const events = JSON.parse(localStorage.getItem('allEvents')) || [];
+  
   const [showNotifications, setshowNotifications] = useState(false);
   const [showInvites, setShowInvites] = useState(false);
   const [searchText, setSearchText] = useState("");

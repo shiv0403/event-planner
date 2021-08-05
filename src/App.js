@@ -30,7 +30,7 @@ function App() {
       {/* <AddTaks /> */}
       {/* <AddMoney /> */}
       {/* <WithDraw /> */}
-      <TransferMoney />
+      {/* <TransferMoney /> */}
     </div>
   );
 }
