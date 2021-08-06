@@ -81,13 +81,13 @@ function Chatbox() {
       <div className="chat__header">
         <Avatar />
         <div className="chat__headerInfo">
-          <h3>Room Name</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <h3>Celebrating Priyansh's Birthday</h3>
+          {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> */}
         </div>
         <div className="chat__headerRight">
-          <IconButton>
+          {/* <IconButton>
             <SearchIcon />
-          </IconButton>
+          </IconButton> */}
 
           <IconButton>
             <MoreVertIcon />
@@ -97,6 +97,12 @@ function Chatbox() {
 
       <div className="chat__body">
         <Message send={"yes"} />
+        <Message send={"no"} />
+        <Message send={"yes"} />
+        <Message send={"no"} />
+        <Message send={"yes"} />
+        <Message send={"yes"} />
+        <Message send={"no"} />
         <Message send={"no"} />
         <Message send={"yes"} />
         <Message send={"no"} />

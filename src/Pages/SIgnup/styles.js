@@ -6,7 +6,8 @@ export default makeStyles((theme) => ({
     height: "100vh",
   },
   container: {
-    paddingTop: "50px",
+    paddingTop: "40px",
+    paddingBottom:"40px"
   },
   input: {
     marginTop: "15px",
@@ -20,7 +21,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: theme.spacing(5),
+    padding:"20px 60px 20px 60px"
   },
   root: {
     "& .MuiTextField-root": {

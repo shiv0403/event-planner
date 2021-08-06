@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     height: "100vh",
   },
   container: {
-    paddingTop: "100px",
+    paddingTop: "50px",
   },
   input: {
     marginTop: "15px",
