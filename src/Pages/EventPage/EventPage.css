@@ -1,7 +1,14 @@
 .eventPageContainer{
  display: flex;
- flex-wrap: wrap;
 }
+
+.leftSide{
+  width: 27%;
+}
+.chatBoxContainer{
+  width: 73%;
+}
+
 .topHeader{
   height:60px ;
   background-color:white;

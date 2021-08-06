@@ -145,7 +145,7 @@ function Login() {
               onFailure={googleFailure}
               cookiePolicy="single_host_origin"
             />
-
+            
             <Grid container justify="center">
               <Grid item>
                 <Button
@@ -154,9 +154,20 @@ function Login() {
                   color="secondary"
                   onClick={handleSwitch}
                 >
-                  Don't have an account? Sign Up
+                  Forgot Password ?
                 </Button>
               </Grid>
+              <Grid item>
+                <Button
+                  fullWidth
+                  varient="contained"
+                  color="secondary"
+                  onClick={handleSwitch}
+                >
+                  Create An Account
+                </Button>
+              </Grid>
+              
             </Grid>
           </form>
         </Paper>

@@ -8,6 +8,8 @@ import './App.css'
 import Layout from "./Pages/Layout";
 import Mainbody from "./Pages/MainBody/Mainbody";
 import Profile from "./Pages/Profile/Profile";
+import Login from './Pages/Login/Login'
+import Signup from './Pages/SIgnup/Signup'
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
               <Route path="/profile">
                 <Layout><Profile/></Layout>
               </Route>
+              <Route path="/login" component={Login}/>
+              <Route path="/signup" component={Signup}/>
         </Switch>
       </div>
       </Router>

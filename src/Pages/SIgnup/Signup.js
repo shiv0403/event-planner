@@ -169,7 +169,7 @@ function Signup() {
                   color="secondary"
                   onClick={handleSwitch}
                 >
-                  Already have an account? Log In
+                  Have an account? Log In
                 </Button>
               </Grid>
             </Grid>

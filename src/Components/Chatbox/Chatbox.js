@@ -82,7 +82,7 @@ function Chatbox() {
         <Avatar />
         <div className="chat__headerInfo">
           <h3>Celebrating Priyansh's Birthday</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> */}
         </div>
         <div className="chat__headerRight">
           {/* <IconButton>
@@ -95,7 +95,7 @@ function Chatbox() {
         </div>
       </div>
 
-      <div className="chat__body" style={{backgroundImage:"url('chatBackground5.jpeg')"}}>
+      <div className="chat__body">
         <Message send={"yes"} />
         <Message send={"no"} />
         <Message send={"yes"} />
