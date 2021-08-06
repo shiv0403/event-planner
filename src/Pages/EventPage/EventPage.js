@@ -45,7 +45,7 @@ function EventPage() {
                         <i className={showTasks ? "fa fa-tasks active" : "fa fa-tasks"} title="View Tasks" onClick={handleTaskClick}></i>
                     </div>
                 </div>
-                {showEventInfo ? <EventInfo/> : showLogFile ? <LogFile/> : <div className="taskContainer"> {taskArray}</div>}
+                {showEventInfo ? <EventInfo/> : showLogFile ? <LogFile/> : <div className="taskContainer">  {taskArray}</div>}
             </div>
             
             {/* <div className="taskContainer" style={{  }}>

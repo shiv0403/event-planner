@@ -1,15 +1,12 @@
 .logFile__data {
-  margin-top: 10px;
-  overflow-y: scroll;
-  height: 98vh;
   color: #6a5d5d;
   width: 420px;
-  border-radius: 10px;
-  /* box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 12px -1px rgba(0, 0, 0, 0.75); */
+  background-color: white;
 }
-
+.transactionLogsContainer{
+overflow: auto;
+height: 51vh;
+}
 .logFile__data tr {
   display: flex;
   justify-content: space-between;
@@ -32,21 +29,21 @@
   content: ".";
 }
 
-.logFile__data::-webkit-scrollbar {
+.transactionLogsContainer::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-.logFile__data::-webkit-scrollbar-track {
+.transactionLogsContainer::-webkit-scrollbar-track {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.1);
 }
-.logFile__data::-webkit-scrollbar-thumb {
+.transactionLogsContainer::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
 }
-.logFile__data::-webkit-scrollbar-thumb:hover {
+.transactionLogsContainer::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
 }
-.logFile__data::-webkit-scrollbar-thumb:active {
+.transactionLogsContainer::-webkit-scrollbar-thumb:active {
   background: rgba(0, 0, 0, 0.9);
 }
