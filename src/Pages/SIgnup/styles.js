@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding:"20px 40px 20px 40px"
+    padding:"20px 60px 20px 60px"
   },
   root: {
     "& .MuiTextField-root": {

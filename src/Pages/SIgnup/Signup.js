@@ -14,6 +14,7 @@ import { useHistory } from "react-router";
 import Icon from "./Icon.js";
 
 import useStyle from "./styles.js";
+import { Link } from "react-router-dom";
 
 const initialState = {
   name: "",
@@ -163,14 +164,16 @@ function Signup() {
 
             <Grid container justify="center">
               <Grid item>
+              <Link to="/login" style={{textDecoration:"none"}}>
                 <Button
                   fullWidth
                   varient="contained"
                   color="secondary"
-                  onClick={handleSwitch}
+                  style={{textTransform:"None"}}
                 >
                   Have an account? Log In
                 </Button>
+                </Link>
               </Grid>
             </Grid>
           </form>

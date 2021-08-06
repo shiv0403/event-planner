@@ -17,6 +17,7 @@ import { useHistory } from "react-router";
 import Icon from "./Icon.js";
 
 import useStyle from "./styles.js";
+import { Link } from "react-router-dom";
 
 function Login() {
   const classes = useStyle();
@@ -45,9 +46,6 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSwitch = () => {
-    console.log("clicked");
-  };
 
   const handleShowPassword = () => {
     setShowPassword((prevPass) => !prevPass);
@@ -152,21 +150,25 @@ function Login() {
                   fullWidth
                   varient="contained"
                   color="secondary"
-                  onClick={handleSwitch}
+                  style={{textTransform:"none"}}
                 >
                   Forgot Password ?
                 </Button>
               </Grid>
+              
               <Grid item>
+              <Link to="/signup"  style={{textDecoration:"none"}}>
                 <Button
                   fullWidth
                   varient="contained"
                   color="secondary"
-                  onClick={handleSwitch}
+                  style={{textTransform:"none"}}
                 >
-                  Create An Account
+                  Don't have an account? Create One
                 </Button>
+                </Link>
               </Grid>
+              
               
             </Grid>
           </form>
