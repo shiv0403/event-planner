@@ -32,19 +32,17 @@ function Login() {
   const [checked, setChecked] = useState(false);
 
   const userLogin = useSelector(state => state.userLogin);
-  console.log(userLogin);
   const {userInfo} = userLogin;
 
   const handleCheck = (e) => {
-    let x = e.target.value;
-    console.log(x);
-    // if (e.target.value) {
-    //   setEmail('sample@gmail.com');
-    //   setPassword('sampleacc');
-    // } else {
-    //   setEmail('');
-    //   setPassword('');
-    // }
+    setChecked(!Boolean(e.target.value));
+    if (Boolean(e.target.value)) {
+      setEmail('sample@gmail.com');
+      setPassword('sampleacc');
+    } else {
+      setEmail('');
+      setPassword('');
+    }
   };
 
   useEffect(() => {
