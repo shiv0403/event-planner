@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "50%",
+    width: "40%",
     borderRadius: "10px",
     height: "88vh",
   },
@@ -130,7 +130,13 @@ const CreateEvent = ({ open, handleAddEvent }) => {
                 handleChange={handleChange}
               />
             )}
-            {step === 3 && <EventSuccess handleClose={handleClose} />}
+            {step === 3 && (
+              <EventSuccess
+                handleClose={handleClose}
+                values={values}
+                prevStep={prevStep}
+              />
+            )}
           </div>
         </Fade>
       </Modal>

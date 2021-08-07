@@ -14,13 +14,14 @@ export default makeStyles((theme) => ({
   },
   root: {
     // display: "flex",
+    margin: "auto",
   },
   categories: {
     margin: theme.spacing(3),
   },
   avatar: {
-    width: "30%",
-    height: "110px",
+    width: "25%",
+    height: "100px",
     margin: "auto",
   },
   container: {

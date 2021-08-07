@@ -6,7 +6,7 @@ import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
 import Layout from "./Pages/Layout";
 // import Chatbox from "./Components/Chatbox/Chatbox";
-// import CreateEvent from "./Components/CreateEvent/CreateEvent";
+import CreateEvent from "./Components/CreateEvent/CreateEvent";
 import EventInfo from "./Components/EventInfo/EventInfo";
 import EventPage from "./Pages/EventPage/EventPage";
 import AddTaks from "./Components/AddTask/AddTaks";
@@ -18,7 +18,7 @@ import TransferMoney from "./Components/TransferMoney/TransferMoney";
 function App() {
   return (
     <div className="App">
-      {/* <Layout /> */}
+      <Layout />
       {/* <Login /> */}
       {/* <Chatbox /> */}
       {/* <CreateEvent /> */}
@@ -30,7 +30,7 @@ function App() {
       {/* <AddTaks /> */}
       {/* <AddMoney /> */}
       {/* <WithDraw /> */}
-      <TransferMoney />
+      {/* <TransferMoney /> */}
     </div>
   );
 }
