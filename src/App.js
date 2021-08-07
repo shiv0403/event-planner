@@ -15,7 +15,7 @@ import Signup from './Pages/SIgnup/Signup'
 function App() {
 
   const pageNotFound = () => {
-    (
+    return (
       <div>
         <h1>Error : 404</h1>
         <p>Page Not Found</p>
@@ -42,6 +42,7 @@ function App() {
               </Route>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
+              <Route component={pageNotFound} />
         </Switch>
       </div>
       </Router>
