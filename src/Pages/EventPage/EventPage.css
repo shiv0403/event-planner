@@ -1,15 +1,15 @@
-.eventPageContainer{
+/* .eventPageContainer{
  display: flex;
 }
 
 .leftSide{
   width: 27%;
 }
-.chatBoxContainer{
+.rightSide{
   width: 73%;
-}
+} */
 
-.topHeader{
+/* .topHeader{
   height:60px ;
   background-color:white;
   border-right: 1px solid #ddd;
@@ -17,8 +17,8 @@
   align-items: center;
   justify-content: space-between;
   color: rgb(37, 37, 37);
-}
-.topHeader h2 {
+} */
+/* .topHeader h2 {
   padding:0px 20px 0px 10px;
 }
 .iconsSet{
@@ -42,7 +42,7 @@
   color:#16ba1f;
   /* transform:perspective(50px) translateZ(10px) rotate(360deg); */
   /* backface-visibility: hidden; */
-}
+/* }  */
 
 
 
@@ -73,8 +73,6 @@
   }
   
  @media screen and(max-width:600px) {
-    .eventPageContainer{
-        display: block;
-        flex-direction: column;
-    }     
+
+   
  } 

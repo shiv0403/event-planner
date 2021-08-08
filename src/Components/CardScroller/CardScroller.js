@@ -40,15 +40,6 @@ function CardScroller({events}) {
    
     window.addEventListener('resize',() => handleNoofSlides(window.innerWidth))
     
-    // events.map(event => {
-
-    // })
-
-    // for (let i =0;i<eve;i++){
-    //     slides.push(
-    //         <SwiperSlide key={i}><Card key={i}  /></SwiperSlide>
-    //     )
-    // }
     useEffect(() => {
         handleNoofSlides(window.innerWidth,{signal : abortConst.signal});
         return () => {
@@ -62,7 +53,7 @@ function CardScroller({events}) {
       slidesPerView={noOfSlides}
     >
         {events.map(event => <SwiperSlide key={event.id}><Card key={event.id} event = {event} /></SwiperSlide>)}
-        {/* {slides} */}
+
     </Swiper>
         </div>
     )
