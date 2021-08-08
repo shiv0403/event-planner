@@ -8,48 +8,50 @@ import {
   TextField,
 } from "@material-ui/core";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import Icon from "./Icon.js";
-
+import { useDispatch, useSelector } from 'react-redux'
 import useStyle from "./styles.js";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../Actions/UserActions.js";
 
-const initialState = {
-  name: "",
-  phone: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
+
+
+
 
 function Signup() {
+  const [name, setname] = useState('');
+const [phone, setphone] = useState('');
+const [email, setemail] = useState('');
+const [password, setpassword] = useState('');
+const [confirmPassword, setconfirmPassword] = useState('');
   const classes = useStyle();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState(initialState);
-  const [checked, setChecked] = useState(false);
 
-  const sample = () => {};
-  const handleSubmit = () => {};
-  const handleCheck = () => {
-    setChecked((prev) => !prev);
-  };
-  const handleChange = (e) => {
-    console.log("This is change function");
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
-  const handleSwitch = () => {
-    console.log("clicked");
-    history.push("/signup");
-  };
+  const userLogin = useSelector(state => state.userRegister);
+  const {userInfo} = userLogin;
 
-  const handleShowPassword = () => {
-    setShowPassword((prevPass) => !prevPass);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name != '' && email != '' && phone.length >= 10 && phone.length <=12 && password == confirmPassword && password.length >= 8){
+      dispatch(registerUser(name,phone,email,password));
+    }else{
+      alert('Form Error');
+    }
   };
+  
+  useEffect(() => {
+    if(userInfo){
+      history.push('/');
+    }
+  },[history,userInfo])
+
 
   const googleSuccess = async () => {
     console.log("Success Login");
@@ -77,18 +79,20 @@ function Signup() {
               <TextField
                 name="name"
                 label="Name"
-                handleChange={handleChange}
                 xs={6}
+                onInput = {(e) => setname(e.target.value)}
                 varient="outlined"
                 fullWidth
+                value ={name}
                 required
                 className={classes.input}
               />
               <TextField
                 name="phone"
                 label="Mobile No."
-                handleChange={handleChange}
                 xs={6}
+                onInput = {(e) => setphone(e.target.value)}
+                value ={phone}
                 varient="outlined"
                 fullWidth
                 required
@@ -98,8 +102,9 @@ function Signup() {
                 name="email"
                 label="Email Address"
                 type="email"
-                handleChange={handleChange}
                 xs={6}
+                onInput = {(e) => setemail(e.target.value)}
+                value ={email}
                 varient="outlined"
                 fullWidth
                 required
@@ -108,10 +113,10 @@ function Signup() {
               <TextField
                 name="password"
                 label="Password"
-                handleChange={handleChange}
                 type={showPassword ? "text" : "password"}
-                handleShowPassword={handleShowPassword}
                 xs={6}
+                onInput = {(e) => setpassword(e.target.value)}
+                value ={password}
                 varient="outlined"
                 fullWidth
                 required
@@ -121,10 +126,10 @@ function Signup() {
               <TextField
                 name="confPassoword"
                 label="Confirm Password"
-                handleChange={handleChange}
                 type={showPassword ? "text" : "password"}
-                handleShowPassword={handleShowPassword}
                 xs={6}
+                onInput = {(e) => setconfirmPassword(e.target.value)}
+                value ={confirmPassword}
                 varient="outlined"
                 fullWidth
                 required

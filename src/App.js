@@ -14,10 +14,12 @@ import LogFile from "./Components/LogFile/LogFile";
 
 function App() {
   const pageNotFound = () => {
-    <div>
-      <h1>Error : 404</h1>
-      <p>Page Not Found</p>
-    </div>;
+    return (
+      <div>
+        <h1>Error : 404</h1>
+        <p>Page Not Found</p>
+      </div>
+    );
   };
 
   return (
@@ -26,9 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Layout>
-              {/* <Mainbody /> */}
-              {/* <Profile /> */}
-              <LogFile />
+              <Mainbody />
             </Layout>
           </Route>
           <Route path="/event">
@@ -46,6 +46,7 @@ function App() {
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route component={pageNotFound} />
         </Switch>
       </div>
     </Router>

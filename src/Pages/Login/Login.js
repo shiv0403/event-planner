@@ -15,37 +15,50 @@ import React, { useState } from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import Icon from "./Icon.js";
+import { useDispatch, useSelector } from 'react-redux'
 
 import useStyle from "./styles.js";
 import { Link } from "react-router-dom";
+import { loginUser } from '../../Actions/UserActions'
+import { useEffect } from "react";
 
 function Login() {
   const classes = useStyle();
   const history = useHistory();
-
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');   
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
   const [checked, setChecked] = useState(false);
 
-  const sample = () => {};
-  const handleSubmit = () => {};
-  const handleCheck = () => {
-    setChecked((prev) => !prev);
-    console.log(checked);
-    if (checked) {
-      setFormData({ email: "sample@gmail.com", password: "sampleacc" });
+  const userLogin = useSelector(state => state.userLogin);
+  const {userInfo} = userLogin;
+
+  const handleCheck = (e) => {
+    setChecked(!Boolean(e.target.value));
+    if (Boolean(e.target.value)) {
+      setEmail('sample@gmail.com');
+      setPassword('sampleacc');
     } else {
-      setFormData({ email: "", password: "" });
+      setEmail('');
+      setPassword('');
     }
   };
-  const handleChange = (e) => {
-    console.log("This is change function");
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
+  useEffect(() => {
+    if(userInfo){
+      history.push('/');
+    }
+  },[history,userInfo])
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    if (email != '' && password != '' && password.length > 8){
+      dispatch(loginUser(email,password));
+    }else{
+      alert('Login failed')
+    }
+  }
 
   const handleShowPassword = () => {
     setShowPassword((prevPass) => !prevPass);
@@ -71,25 +84,25 @@ function Login() {
           <form
             className={classes.form}
             onSubmit={handleSubmit}
-            autoComplete="off"
+            autoComplete="on"
           >
             <Grid container spacing={2}>
               <TextField
                 name="email"
                 label="Email Address"
                 type="email"
-                onChange={handleChange}
+                onInput={(e) => setEmail(e.target.value)}
                 xs={6}
                 varient="outlined"
                 fullWidth
                 required
                 className={classes.input}
-                value={formData.email}
+                value={email}
               />
               <TextField
                 name="password"
                 label="password"
-                onChange={handleChange}
+                onInput = {(e) => setPassword(e.target.value)}
                 type={showPassword ? "text" : "password"}
                 handleShowPassword={handleShowPassword}
                 xs={6}
@@ -97,16 +110,16 @@ function Login() {
                 fullWidth
                 required
                 className={classes.input}
-                value={formData.password}
+                value={password}
               />
               <FormGroup row className={classes.checkbox}>
                 <FormControlLabel
                   control={
                     <Checkbox
-                      checked={checked}
                       onChange={handleCheck}
                       name="checkedB"
                       color="primary"
+                      value = {checked}
                     />
                   }
                   label="Login with sample account"
