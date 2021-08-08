@@ -10,6 +10,8 @@ import Mainbody from "./Pages/MainBody/Mainbody";
 import Profile from "./Pages/Profile/Profile";
 import Login from './Pages/Login/Login'
 import Signup from './Pages/SIgnup/Signup'
+import TestPage from './Pages/TestPage/TestPage'
+import EventInfo from "./Components/EventInfo/EventInfo";
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
               </Route>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
+              <Route path="/testpage" component={TestPage}/>
+              <Route path="/testComponent" component ={EventInfo}/>
               <Route component={pageNotFound} />
         </Switch>
       </div>

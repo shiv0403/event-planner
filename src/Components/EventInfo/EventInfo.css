@@ -1,4 +1,3 @@
-
 .eventInfo {
   padding: 0px;
   background: white;
@@ -9,6 +8,7 @@
   padding: 30px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  height: 36vh;
 }
 
 .eventInfo__budget__main {
@@ -61,7 +61,7 @@
 }
 
 .eventInfo__people {
-  height: 51vh;
+  height: 49vh;
   overflow-y: scroll;
 }
 
@@ -96,6 +96,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
+    height: 5vh;
 }
 .participantsDetails p {
   font-weight: 700;

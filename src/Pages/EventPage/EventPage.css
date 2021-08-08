@@ -5,7 +5,7 @@
 .leftSide{
   width: 27%;
 }
-.chatBoxContainer{
+.rightSide{
   width: 73%;
 }
 
@@ -73,8 +73,6 @@
   }
   
  @media screen and(max-width:600px) {
-    .eventPageContainer{
-        display: block;
-        flex-direction: column;
-    }     
+
+   
  } 

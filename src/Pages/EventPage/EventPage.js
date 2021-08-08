@@ -47,10 +47,9 @@ function EventPage() {
                 </div>
                 {showEventInfo ? <EventInfo/> : showLogFile ? <LogFile/> : <div className="taskContainer">  {taskArray}</div>}
             </div>
-        <div className="chatBoxContainer">
+        <div className="rightSide">
             <Chatbox/>
-        </div>
-          
+        </div>  
         </div>
     )
 }

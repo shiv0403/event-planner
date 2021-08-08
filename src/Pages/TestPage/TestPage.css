@@ -1,0 +1,58 @@
+.testPageContainer{
+    display: flex;
+}
+.testLeftSide{
+    width: 29%;
+    height: 100vh;
+    border: 1px solid red;
+}
+.testRightSide{
+    width: 71%;
+    height: 100vh;
+    border: 1px solid green;
+}
+
+.testMenuBar,.testPageHeader{
+    height: 10vh;
+    border: 1px solid blue;
+}
+.testInfo{
+    height: 90vh;
+    border: 1px solid violet;
+}
+.testPageBody{
+    height: 80vh;
+    border: 1px solid yellow;
+}
+.testPageFooter{
+    height: 10vh;
+    border: 1px solid saddlebrown;
+}
+.openChat{
+    display: none;
+}
+
+@media screen and (max-width:600px){
+    .testRightSide{
+        position: fixed;
+        right: -100%;
+        top:0%;
+    }
+    .testRightSide.show{
+        right: 0%;
+        width: 100%;
+    }
+    .testLeftSide{
+        width: 100%;
+    }
+    .openChat{
+        display: block;
+        position: fixed;
+        bottom: 10%;
+        right:6%;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid goldenrod;
+    }
+}
