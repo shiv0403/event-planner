@@ -159,9 +159,9 @@ function TestPage() {
                 {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p> */}
               </div>
               <div className="chat__headerRight">
-                <IconButton>
+                {/* <IconButton>
                   <MoreVertIcon />
-                </IconButton>
+                </IconButton> */}
               </div>
             </div>
           </div>
