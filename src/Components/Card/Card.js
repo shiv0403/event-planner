@@ -1,9 +1,11 @@
 import React from "react";
 import "./Card.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Card({ event }) {
   return (
+    <Link to="/testpage" style={{textDecoration:"none"}} >
     <div className="eventCard" tabIndex={0} id={event.id}>
       <div
         className="cardTopSection"
@@ -40,6 +42,7 @@ function Card({ event }) {
         <i className="fa fa-user-plus" />
       </div>
     </div>
+    </Link>
   );
 }
 

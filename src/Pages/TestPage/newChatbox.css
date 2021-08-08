@@ -1,0 +1,66 @@
+.chat__header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color:white;
+    font-weight: 700;
+    height: 10vh;
+    border-bottom: 1px solid #ddd;
+  }
+  .chat__headerInfo {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .chat__headerInfo > h3 {
+    margin-bottom: 3px;
+    font-size: 16px;
+  }
+  
+  .chat__headerInfo > p {
+    color: gray;
+    font-size: 0.8rem;
+  }
+
+.testPageFooter form{
+    width: 100%;
+    display: flex;
+}
+.testPageFooter form input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 1.05rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ddd;
+}
+.chat__emoji {
+    position: absolute;
+    bottom: 90px;
+  }
+  .scroll .inner {
+    height: 300%;
+    width: 100%;
+    content: ".";
+  }
+
+  input[type="file"]::file-selector-button {
+    padding: 5px 3px;
+    width: 100px;
+    border: 1px #244ed8 solid;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background-color: #fff;
+    font-weight: 800;
+    color: #244ed8;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background-color: RGBA(36, 78, 216, 0.1);
+    box-shadow: inset 0 0 0 1.5px #244ed8;
+    transition: all 0.3s;
+  }
