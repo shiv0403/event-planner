@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Card({ event }) {
   return (
-    <Link to="/testpage" style={{textDecoration:"none"}} >
+    <Link to="/event" style={{textDecoration:"none"}} >
     <div className="eventCard" tabIndex={0} id={event.id}>
       <div
         className="cardTopSection"

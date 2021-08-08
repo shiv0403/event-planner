@@ -11,7 +11,8 @@ import Profile from "./Pages/Profile/Profile";
 import Login from './Pages/Login/Login'
 import Signup from './Pages/SIgnup/Signup'
 import TestPage from './Pages/TestPage/TestPage'
-import Chatbox from "./Components/Chatbox/Chatbox";
+import LogFile from "./Components/LogFile/LogFile";
+
 
 
 
@@ -35,7 +36,7 @@ function App() {
                 <Layout ><Mainbody/></Layout>  
               </Route>
               <Route path="/event">
-                <EventPage/>
+                <TestPage/>
               </Route>
               <Route path="/analytics">
                 <Layout><Analytics/></Layout>
@@ -45,8 +46,8 @@ function App() {
               </Route>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
-              <Route path="/testpage" component={TestPage}/>
-              <Route path="/testComponent" component ={Chatbox}/>
+              {/* <Route path="/testpage" component={TestPage}/> */}
+              {/* <Route path="/testComponent" component ={LogFile}/> */}
               <Route component={pageNotFound} />
         </Switch>
       </div>
