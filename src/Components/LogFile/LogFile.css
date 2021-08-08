@@ -1,11 +1,10 @@
 .logFile__data {
   color: #6a5d5d;
-  width: 420px;
   background-color: white;
 }
 .transactionLogsContainer{
 overflow: auto;
-height: 51vh;
+height: 49vh;
 }
 .logFile__data tr {
   display: flex;
