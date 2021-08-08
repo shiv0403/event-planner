@@ -14,7 +14,11 @@ function AddPerson({ name, email }) {
     <div className="add__person">
       <div className="ap__details">
         <div className="ap__details__avatar">
-          <Avatar alt={name} src="/static/images/avatar/1.jpg" />
+          <Avatar
+            alt={name}
+            src="/static/images/avatar/1.jpg"
+            className="invite__avatar"
+          />
         </div>
         <div className="ap__details__cred">
           <h3>{name}</h3>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createTheme } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -8,7 +8,20 @@ import AddPeople from "./AddPeople";
 import EventDetails from "./EventDetails";
 import EventSuccess from "./EventSuccess";
 
-const useStyles = makeStyles((theme) => ({
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      es: 420,
+      sm: 550,
+      md: 770,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
+const useStyles = makeStyles(() => ({
   modal: {
     display: "flex",
     alignItems: "center",
@@ -16,12 +29,22 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: "1px solid #ddd",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "50%",
+    width: "40%",
     borderRadius: "10px",
-    height: "88vh",
+    height: "auto",
+    [theme.breakpoints.down("md")]: {
+      padding: "10px 0px",
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "90%",
+    },
+    [theme.breakpoints.down("es")]: {
+      width: "100%",
+    },
   },
 }));
 
@@ -130,7 +153,13 @@ const CreateEvent = ({ open, handleAddEvent }) => {
                 handleChange={handleChange}
               />
             )}
-            {step === 3 && <EventSuccess handleClose={handleClose} />}
+            {step === 3 && (
+              <EventSuccess
+                handleClose={handleClose}
+                values={values}
+                prevStep={prevStep}
+              />
+            )}
           </div>
         </Fade>
       </Modal>

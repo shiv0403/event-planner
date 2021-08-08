@@ -1,4 +1,11 @@
-import { Avatar, Fade, IconButton, makeStyles, Modal } from "@material-ui/core";
+import {
+  Avatar,
+  Fade,
+  IconButton,
+  makeStyles,
+  Modal,
+  createTheme,
+} from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 import React from "react";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -6,7 +13,19 @@ import Backdrop from "@material-ui/core/Backdrop";
 import "./Transaction.css";
 import shivansh from "./shivansh.png";
 
-const useStyles = makeStyles((theme) => ({
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 550,
+      md: 750,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
+const useStyles = makeStyles(() => ({
   modal: {
     display: "flex",
     alignItems: "center",
@@ -19,6 +38,15 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1, 1, 1),
     width: "30%",
     borderRadius: "20px",
+    [theme.breakpoints.down("lg")]: {
+      width: "30%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "95%",
+    },
   },
   moreVert: {
     marginLeft: "10px",

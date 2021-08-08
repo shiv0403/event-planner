@@ -1,0 +1,10 @@
+.eventDetails {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.eventDetails__typeHeading {
+  font-size: 1.5rem;
+  margin-top: 40px;
+}
