@@ -1,37 +1,54 @@
-import React from "react";
-import CreateTaskCard from "./Components/CreateTaskCard/CreateTaskCard";
-import TaskCard from "./Components/TaskCard/TaskCard";
-import Modal from "./Components/SearchModal/SearchModal";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Analytics from "./Pages/Analytics/Analytics";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Header from "./Components/Header/Header";
+import EventPage from "./Pages/EventPage/EventPage";
+import "./App.css";
+import Layout from "./Pages/Layout";
+import Mainbody from "./Pages/MainBody/Mainbody";
+import Profile from "./Pages/Profile/Profile";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
-import Layout from "./Pages/Layout";
-// import Chatbox from "./Components/Chatbox/Chatbox";
-import CreateEvent from "./Components/CreateEvent/CreateEvent";
-import EventInfo from "./Components/EventInfo/EventInfo";
-import EventPage from "./Pages/EventPage/EventPage";
-import AddTaks from "./Components/AddTask/AddTaks";
-import AddMoney from "./Components/AddMoney/AddMoney";
 import LogFile from "./Components/LogFile/LogFile";
-import WithDraw from "./Components/WithDraw/WithDraw";
-import TransferMoney from "./Components/TransferMoney/TransferMoney";
 
 function App() {
+  const pageNotFound = () => {
+    <div>
+      <h1>Error : 404</h1>
+      <p>Page Not Found</p>
+    </div>;
+  };
+
   return (
-    <div className="App">
-      <Layout />
-      {/* <Login /> */}
-      {/* <Chatbox /> */}
-      {/* <CreateEvent /> */}
-      {/* <EventInfo /> */}
-      {/* <LogFile /> */}
-      {/* <CreateTaskCard/> */}
-      {/* <TaskCard/> */}
-      {/* <EventPage/> */}
-      {/* <AddTaks /> */}
-      {/* <AddMoney /> */}
-      {/* <WithDraw /> */}
-      {/* <TransferMoney /> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Layout>
+              {/* <Mainbody /> */}
+              {/* <Profile /> */}
+              <LogFile />
+            </Layout>
+          </Route>
+          <Route path="/event">
+            <EventPage />
+          </Route>
+          <Route path="/analytics">
+            <Layout>
+              <Analytics />
+            </Layout>
+          </Route>
+          <Route path="/profile">
+            <Layout>
+              <Profile />
+            </Layout>
+          </Route>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

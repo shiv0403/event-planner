@@ -1,0 +1,330 @@
+.profile__main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.profile {
+  min-width: 350px;
+  padding: 0px 50px;
+  background-color: #fff;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  flex: 0.4;
+}
+
+.profile__edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.profile__edit > h1 {
+  /* margin-bottom: 30px; */
+}
+
+.profile__edit > button {
+  width: 30%;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px #244ed8 solid;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #244ed8;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.profile__edit > button:hover {
+  background-color: RGBA(36, 78, 216, 0.1);
+  box-shadow: inset 0 0 0 1.5px #244ed8;
+  transition: all 0.3s;
+}
+
+.profile__img > img {
+  /* height: 200px; */
+  width: 100px;
+  border-radius: 10%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.profile__details {
+  /* padding: 0 20px; */
+  border-radius: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.profile__name,
+.profile__email,
+.profile__phone,
+.profile__totalEvents,
+.profile__currentEvents,
+.profile__completedEvents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: solid var(--decorative-subdued, #dedede);
+}
+
+.profile__name > p:first-child,
+.profile__email > p:first-child,
+.profile__phone > p:first-child,
+.profile__totalEvents > p:first-child,
+.profile__currentEvents > p:first-child,
+.profile__completedEvents > p:first-child {
+  margin-right: 150px;
+  font-size: 1.1rem;
+  color: gray;
+}
+
+.profile__name > p:last-child,
+.profile__email > p:last-child,
+.profile__phone > p:last-child,
+.profile__totalEvents > p:last-child,
+.profile__currentEvents > p:last-child,
+.profile__completedEvents > p:last-child {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* bank details */
+
+.bankAcc {
+  background-color: #fff;
+  /* padding: 20px; */
+  border-radius: 20px;
+  flex: 0.4;
+  /* max-height: 60vh;
+  overflow-y: auto; */
+}
+
+.bank__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: solid var(--decorative-subdued, #dedede);
+  padding: 20px 0px;
+}
+
+.bank__add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #eee; */
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.bank__add > h1 {
+  font-size: 1.2rem;
+}
+
+.bank__add > button {
+  width: 32%;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px #244ed8 solid;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #244ed8;
+}
+
+.bank__add > button:hover {
+  background-color: RGBA(36, 78, 216, 0.1);
+  box-shadow: inset 0 0 0 1.5px #244ed8;
+  transition: all 0.3s;
+}
+
+.bank__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.bank__img {
+  margin-right: 10px;
+}
+
+.scroll .inner {
+  height: 300%;
+  width: 100%;
+  content: ".";
+}
+
+.bankAcc__container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.bankAcc__container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.bankAcc__container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.bankAcc__container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.bankAcc__container::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.bankAcc__container {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.bankAdd__select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1200px) {
+  .profile__main {
+    display: block;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 0px;
+  }
+
+  .profile {
+    min-width: 350px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    flex: 0.4;
+  }
+
+  .bankAcc {
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+    flex: 0.4;
+  }
+}
+
+@media (max-width: 650px) {
+  .profile {
+    min-width: 350px;
+    width: 85%;
+    margin: auto;
+  }
+
+  .bankAcc {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .bankAcc {
+    width: 90%;
+    margin: auto;
+  }
+
+  .profile__name > p:first-child,
+  .profile__email > p:first-child,
+  .profile__phone > p:first-child,
+  .profile__totalEvents > p:first-child,
+  .profile__currentEvents > p:first-child,
+  .profile__completedEvents > p:first-child {
+    font-size: 0.9rem;
+  }
+
+  .profile__name > p:last-child,
+  .profile__email > p:last-child,
+  .profile__phone > p:last-child,
+  .profile__totalEvents > p:last-child,
+  .profile__currentEvents > p:last-child,
+  .profile__completedEvents > p:last-child {
+    font-size: 0.9rem;
+  }
+
+  .profile__edit > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 445px) {
+  .profile {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .profile__edit > h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile__edit > button {
+    width: 40%;
+    font-size: 1rem;
+  }
+
+  .profile__email > p:last-child {
+    margin-left: -100px;
+    /* display: none; */
+  }
+
+  .bankAcc {
+    margin-bottom: 70px;
+  }
+
+  .bank__add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .bank__add > h1 {
+    font-size: 0.9rem;
+  }
+
+  .bank__add > button {
+    width: 42%;
+    font-size: 0.9rem;
+  }
+
+  .bank__name > h3 {
+    font-size: 1rem;
+  }
+}

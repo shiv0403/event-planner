@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 5px 0px;
   width: 100%;
   margin: 10px auto;
 }
@@ -66,4 +66,75 @@
   background-color: rgba(132, 225, 132, 0.2);
   box-shadow: inset 0 0 0 1.5px green;
   transition: all 0.3s;
+}
+
+@media (max-width: 1300px) {
+  .add__person {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .add__person {
+    padding: 5px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .add__person {
+    padding: 10px 5px 10px 0;
+  }
+
+  .ap__details__cred > h3 {
+    font-size: 1rem;
+  }
+
+  .ap__details__cred > p {
+    font-size: 0.8rem;
+  }
+
+  .addButton {
+    padding: 3px 3px;
+    width: 80px;
+    font-size: 1rem;
+  }
+
+  .addedButton {
+    padding: 3px 3px;
+    width: 80px;
+    font-size: 1rem;
+  }
+  .invite__avatar {
+    height: 30px;
+    width: 30px;
+  }
+
+  .ap__details__avatar {
+    margin-right: 7px;
+  }
+}
+
+@media (max-width: 410px) {
+  .add__person {
+    padding: 10px 10px 10px 5px;
+  }
+
+  .ap__details__cred > h3 {
+    font-size: 0.8rem;
+  }
+
+  .ap__details__cred > p {
+    font-size: 0.7rem;
+  }
+  .addButton {
+    padding: 5px 3px;
+    width: 70px;
+    font-size: 0.8rem;
+  }
+
+  .addedButton {
+    padding: 3px 3px;
+    width: 70px;
+    font-size: 0.8rem;
+  }
 }

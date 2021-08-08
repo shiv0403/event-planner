@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     textAlign: "center",
-    marginTop: "120px",
+    marginTop: "50px",
   },
   image: {
     width: "40%",

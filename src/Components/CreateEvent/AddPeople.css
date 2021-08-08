@@ -82,3 +82,42 @@
   width: 30%;
   margin: auto;
 }
+
+@media (max-width: 1280px) {
+  .add__footer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .add__header {
+    padding: 10px 10px;
+    width: 100%;
+  }
+
+  .add__header > input {
+    width: 100%;
+    padding: 10px 10px;
+    margin-right: 0px;
+    font-size: 1rem;
+  }
+
+  .add__footer {
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .add__header > input {
+    font-size: 0.8rem;
+  }
+
+  .add__footer__link {
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 1rem;
+  }
+}

@@ -1,6 +1,18 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createTheme } from "@material-ui/core/styles";
 
-export default makeStyles((theme) => ({
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 550,
+      md: 750,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
+export default makeStyles(() => ({
   body: {
     textAlign: "center",
     width: "50%",
@@ -18,11 +30,19 @@ export default makeStyles((theme) => ({
   },
   categories: {
     margin: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      // width: "100%",
+      margin: "10px 8px",
+    },
   },
   avatar: {
-    width: "25%",
-    height: "100px",
+    width: "20%",
+    height: "90px",
     margin: "auto",
+    [theme.breakpoints.down("md")]: {
+      width: "20%",
+      height: "60px",
+    },
   },
   container: {
     paddingTop: "100px",
@@ -30,13 +50,21 @@ export default makeStyles((theme) => ({
   input: {
     marginTop: "20px",
   },
+  eventDetails__typeHeading: {
+    marginTop: "30px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.3rem",
+    },
+  },
   checkbox: {
     // marginTop: "20px",
     marginBottom: "20px",
   },
+  check: {},
   button: {
     marginTop: "50px",
     border: "1px solid blue",
+    marginBottom: "20px",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),

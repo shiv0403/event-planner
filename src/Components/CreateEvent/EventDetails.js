@@ -78,7 +78,7 @@ function EventDetails({
             defaultValue={values.eventTitle}
           />
           <div className={classes.root}>
-            <h2 className="eventDetails__typeHeading">Type Of event</h2>
+            <h2 className={classes.eventDetails__typeHeading}>Type Of event</h2>
             <FormControl component="fieldset" className={classes.categories}>
               <FormGroup className={classes.checkbox}>
                 <FormControlLabel
@@ -95,6 +95,7 @@ function EventDetails({
                     />
                   }
                   label="Party"
+                  className={classes.check}
                 />
                 <FormControlLabel
                   control={
