@@ -14,7 +14,9 @@ import AddMoney from "../AddMoney/AddMoney";
 function EventInfo() {
   const [Loader, setLoader] = useState(false);
   const [people, setPeople] = useState([]);
-   
+  const [open, setOpen] = useState(false);
+  const [openTransfer, setOpenTransfer] = useState(false);
+  const [openLimit, setOpenLimit] = React.useState(false); 
 
   useEffect(() => {
     const source = axios.CancelToken.source();
