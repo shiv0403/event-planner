@@ -21,3 +21,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@media (max-width: 510px) {
+  .addMoney__note {
+    font-size: 0.8rem;
+  }
+}

@@ -6,8 +6,14 @@ import CallReceivedIcon from "@material-ui/icons/CallReceived";
 
 import "./EventInfo.css";
 import EventInfoPerson from "./EventInfoPerson";
+import InviteModal from "../InviteModal/InviteModal";
+import TransferMoney from "../TransferMoney/TransferMoney";
+import AddMoney from "../AddMoney/AddMoney";
 
 function EventInfo() {
+  const [open, setOpen] = useState(false);
+  const [openTransfer, setOpenTransfer] = useState(false);
+  const [openLimit, setOpenLimit] = React.useState(false);
   const [people, setPeople] = useState([
     {
       name: "Shivansh Gupta",
@@ -41,6 +47,30 @@ function EventInfo() {
     },
   ]);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpenTransfer = () => {
+    setOpenTransfer(true);
+  };
+
+  const handleCloseTransfer = () => {
+    setOpenTransfer(false);
+  };
+
+  const handleOpenLimit = () => {
+    setOpenLimit(true);
+  };
+
+  const handleCloseLimit = () => {
+    setOpenLimit(false);
+  };
+
   return (
     <div className="eventInfo">
       <div className="eventInfo__budget">
@@ -57,19 +87,35 @@ function EventInfo() {
           </div>
         </div>
         <div className="eventInfo__budget__buttons">
-          <button>
-            <p>Deposit</p> <CallMadeIcon />
-          </button>
-          <button>
-            <p>WithDraw</p>
+          <button onClick={handleOpenLimit}>
+            <p>Set Limit</p>
             <CallReceivedIcon />
+          </button>
+          {openTransfer && (
+            <TransferMoney
+              open={openTransfer}
+              handleClose={handleCloseTransfer}
+            />
+          )}
+
+          {openLimit && (
+            <AddMoney open={openLimit} handleClose={handleCloseLimit} />
+          )}
+
+          <button onClick={handleOpenTransfer}>
+            <p>Transfer</p> <CallMadeIcon />
           </button>
         </div>
       </div>
       <div className="participantsDetails">
-         <p>20 Participants</p>
-         <p><i className="fa fa-user-plus"></i></p>
-       </div>
+        <p>20 Participants</p>
+
+        {open && <InviteModal open={open} handleClose={handleClose} />}
+
+        <p>
+          <i className="fa fa-user-plus" onClick={handleOpen}></i>
+        </p>
+      </div>
       <div className="eventInfo__people">
         {people.map((person) => {
           return (

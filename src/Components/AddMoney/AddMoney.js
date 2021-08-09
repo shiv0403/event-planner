@@ -22,6 +22,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
     width: "30%",
     // height: "40vh",
+    [theme.breakpoints.down("lg")]: {
+      width: "30%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "95%",
+      padding: "20px",
+      // height: "70vh",
+    },
   },
   walletIcon: {
     fontSize: "2.8rem",
@@ -37,27 +48,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AddMoney() {
+function AddMoney({ open, handleClose }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
   const [money, setMoney] = useState(0);
 
   const handleChange = (e) => {
     setMoney(e.target.value);
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const close = () => {
+    handleClose();
   };
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -76,7 +79,7 @@ function AddMoney() {
             <div className="addMoney">
               <div className="addMoney__header">
                 <div className="addMoney__details">
-                  <p>Add Money to</p>
+                  <p>Set Limit to</p>
                   <h3 style={{ color: "black" }}>Priyansh's Birthday</h3>
                   <p>
                     Current Budget: <b style={{ color: "black" }}>$50000</b>
@@ -89,7 +92,7 @@ function AddMoney() {
               <div className="addMoney__body">
                 <TextField
                   name="addMoney"
-                  label="Add Amount"
+                  label="Set your Personal Limit"
                   type="number"
                   xs={6}
                   fullWidth

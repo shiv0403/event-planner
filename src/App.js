@@ -12,6 +12,8 @@ import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
 import TestPage from "./Pages/TestPage/TestPage";
 import LogFile from "./Components/LogFile/LogFile";
+import TransferMoney from "./Components/TransferMoney/TransferMoney";
+import AddMoney from "./Components/AddMoney/AddMoney";
 
 function App() {
   const pageNotFound = () => {
@@ -48,7 +50,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           {/* <Route path="/testpage" component={TestPage}/> */}
-          {/* <Route path="/testComponent" component ={LogFile}/> */}
+          <Route path="/testComponent" component={AddMoney} />
+
           <Route component={pageNotFound} />
         </Switch>
       </div>
