@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AddPeople({ formData, prevStep, nextStep }) {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  // const classes = useStyles();
+  // const [open, setOpen] = useState(false);
   const [data, setData] = useState([
     {
       name: "Shivansh Gupta",

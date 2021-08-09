@@ -21,20 +21,20 @@ function EventDetails({
   handleChangeCategory,
 }) {
   const classes = useStyle();
-  const [isMoney, setIsMoney] = useState(true);
+  // const [isMoney, setIsMoney] = useState(true);
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [checked5, setChecked5] = useState(false);
   const [checked6, setChecked6] = useState(false);
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
+  // const [selectedDate, setSelectedDate] = React.useState(
+  //   new Date("2014-08-18T21:11:54")
+  // );
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+  // const handleDateChange = (date) => {
+  //   setSelectedDate(date);
+  // };
 
   const handleNext = () => {
     nextStep();

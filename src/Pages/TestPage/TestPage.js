@@ -16,6 +16,8 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { Link } from "react-router-dom";
 import LogFile from "../../Components/LogFile/LogFile";
+import TaskContainer from "../../Components/TaskContainer/TaskContainer";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -145,7 +147,7 @@ function TestPage() {
             </div>
           </div>
           <div className="testInfo">
-            {showEventInfo ? <EventInfo /> : <LogFile/>}
+            {showEventInfo ? <EventInfo /> : showLogFile  ? <LogFile/> : <TaskContainer/> }
           </div>
         </div>
       </div>
@@ -156,12 +158,12 @@ function TestPage() {
               <Avatar />
               <div className="chat__headerInfo">
                 <h3>Celebrating Priyansh's Birthday</h3>
-                {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p> */}
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
               </div>
               <div className="chat__headerRight">
-                {/* <IconButton>
-                  <MoreVertIcon />
-                </IconButton> */}
+                <IconButton  onClick={() => setShowChatBox(!showChatBox)}>
+                  <ArrowBackIosIcon />
+                </IconButton>
               </div>
             </div>
           </div>
