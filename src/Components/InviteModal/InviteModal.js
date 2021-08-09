@@ -8,6 +8,7 @@ import FileCopyIcon from "@material-ui/icons/FileCopy";
 import SearchPerson from "./InvitePerson";
 
 import "./InviteModal.css";
+import axios from "axios";
 
 const theme = createTheme({
   breakpoints: {
@@ -49,28 +50,33 @@ const useStyles = makeStyles(() => ({
 
 export default function InviteModal({ open, handleOpen, handleClose }) {
   const classes = useStyles();
-  // const [open, setOpen] = useState(false);
-  const [data, setData] = useState([
-    {
-      name: "Shivansh Gupta",
-      email: "shivanshgupta@gmail.com",
-    },
-    {
-      name: "Himalaya Gupta",
-      email: "himalayagupta@gmail.com",
-    },
-    {
-      name: "Priyansh Singh",
-      email: "priyanshsingh@gmail.com",
-    }
-  ]);
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
-
+  const [users, setUsers] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [Loader, setLoader] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
   const close = () => {
     handleClose();
+  };
+  const performLiveSearch = async (searchText) => {
+    if (searchText.length === 1) {
+      console.log("request");
+      setLoader(true);
+      setTimeout(async () => {
+        const response = await axios.get("./searchPeople.json");
+        setUsers(response.data);
+        setLoader(false);
+      },500)
+    }
+    let matches = users.filter((user) => {
+      const regex = new RegExp(`^${searchText}`, "gi");
+      return user.name.match(regex) || user.email.match(regex);
+    });
+    setSearchResults(matches);
+    
+  };
+  const handleLiveUserSearch = (e) => {
+    setSearchText(e.target.value);
+    performLiveSearch(e.target.value);
   };
 
   return (
@@ -88,27 +94,77 @@ export default function InviteModal({ open, handleOpen, handleClose }) {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
+          <div className={classes.paper} style={{ position: "relative" }}>
             <div className="search__header">
-              <input type="text" placeholder="Search by Name or Email" />
-              {/* <button type="submit"> Search</button> */}
+              <input
+                type="text"
+                onInput={handleLiveUserSearch}
+                value={searchText}
+                placeholder="Search Users by Name or Email"
+              />
             </div>
-            <div className="search__body">
-              {data.map((person) => (
-                <SearchPerson
-                  name={person.name}
-                  email={person.email}
-                  key={person.email}
-                />
-              ))}
+            <div
+              style={
+                Loader
+                  ? {
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "50vh",
+                    }
+                  : {}
+              }
+            >
+              {Loader ? (
+                <img
+                  src="loaderWifiWhiteBg.gif"
+                  style={{ width: "80px", height: "80px" }}
+                ></img>
+              ) : (
+                <div className="search__body">
+                  {searchResults.length != 0 ? (
+                    searchResults.map((person) => (
+                      <SearchPerson
+                        name={person.name}
+                        email={person.email}
+                        key={person.id}
+                      />
+                    ))
+                  ) : users.length !=0 ? (
+                    <p
+                      style={{
+                        position: "absolute",
+                        top: "40%",
+                        left: "50%",
+                        textAlign: "center",
+                        color: "#707070",
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      No User Found with Keyword "{searchText}"
+                    </p>
+                  ) : (
+                    <p
+                      style={{
+                        position: "absolute",
+                        top: "40%",
+                        left: "50%",
+                        textAlign: "center",
+                        color: "#707070",
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      Search Results would Appear Here...
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
             <div className="search__footer">
               <div className="search__footer__link">
                 <p>https://invitelinke.com</p>
                 <FileCopyIcon />
               </div>
-
-              {/* <button type="submit">Share</button> */}
             </div>
           </div>
         </Fade>

@@ -94,7 +94,7 @@ function EventInfo() {
           </div>
           <div className="eventInfo_budget_buttons">
           <button onClick={handleOpenLimit}>
-            <p>Set Limit</p>
+            <p>SetLimit</p>
             <CallReceivedIcon />
           </button>
           {openTransfer && (
