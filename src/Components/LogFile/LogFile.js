@@ -14,12 +14,10 @@ function LogFile() {
     const source = axios.CancelToken.source();
     async function fetchTransactions() {
       setLoader(true);
-      setTimeout(async()=>{
         const { data } = await axios.get("./data.json");
         console.log(data);
         setInfo(data);
         setLoader(false);
-      },500)
       
     }
     fetchTransactions();

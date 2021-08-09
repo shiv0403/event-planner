@@ -61,11 +61,9 @@ export default function InviteModal({ open, handleOpen, handleClose }) {
     if (searchText.length === 1) {
       console.log("request");
       setLoader(true);
-      setTimeout(async () => {
         const response = await axios.get("./searchPeople.json");
         setUsers(response.data);
         setLoader(false);
-      },500)
     }
     let matches = users.filter((user) => {
       const regex = new RegExp(`^${searchText}`, "gi");
