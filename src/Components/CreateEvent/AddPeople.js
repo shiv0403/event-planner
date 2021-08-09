@@ -16,10 +16,19 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    // padding: theme.spacing(2, 4, 3),
     width: "40%",
     borderRadius: "10px",
-    height: "85%",
+    height: "80vh",
+    [theme.breakpoints.down("lg")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "95%",
+      height: "70vh",
+    },
   },
 }));
 

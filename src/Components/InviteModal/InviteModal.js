@@ -1,15 +1,27 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createTheme } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 
-import SearchPerson from "./SearchPerson";
+import SearchPerson from "./InvitePerson";
 
-import "./SearchModal.css";
+import "./InviteModal.css";
 
-const useStyles = makeStyles((theme) => ({
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 550,
+      md: 750,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
+const useStyles = makeStyles(() => ({
   modal: {
     display: "flex",
     alignItems: "center",
@@ -19,13 +31,23 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     // padding: theme.spacing(2, 4, 3),
-    width: "40%",
+    // width: "40%",
     borderRadius: "10px",
-    height: "85%",
+    height: "80vh",
+    [theme.breakpoints.down("lg")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "95%",
+      height: "70vh",
+    },
   },
 }));
 
-export default function TransitionsModal({ open, handleOpen }) {
+export default function InviteModal({ open, handleOpen, handleClose }) {
   const classes = useStyles();
   // const [open, setOpen] = useState(false);
   const [data, setData] = useState([
@@ -72,8 +94,8 @@ export default function TransitionsModal({ open, handleOpen }) {
   //   setOpen(true);
   // };
 
-  const handleClose = () => {
-    handleOpen();
+  const close = () => {
+    handleClose();
   };
 
   return (
@@ -83,7 +105,7 @@ export default function TransitionsModal({ open, handleOpen }) {
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        onClose={handleClose}
+        onClose={close}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -98,7 +120,11 @@ export default function TransitionsModal({ open, handleOpen }) {
             </div>
             <div className="search__body">
               {data.map((person) => (
-                <SearchPerson name={person.name} email={person.email} />
+                <SearchPerson
+                  name={person.name}
+                  email={person.email}
+                  key={person.email}
+                />
               ))}
             </div>
             <div className="search__footer">
