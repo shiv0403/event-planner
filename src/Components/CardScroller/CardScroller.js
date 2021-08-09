@@ -7,9 +7,7 @@ import './CardScroller.css'
 
 SwiperCore.use([Navigation,Pagination])
 function CardScroller({events}) {
-    const imagesNo = [1,2,3,4,5];
 
-    const slides = [];
     const abortConst = new AbortController();
     const [noOfSlides, setNoOfSlides] = useState(1.3);
     const handleNoofSlides = (screenWidth) => {

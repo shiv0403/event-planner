@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import "./TaskCard.css";
 
-function TaskCard({isComplete}) {
+function TaskCard({task}) {
   return (
-      <div className={isComplete ? "taskCard disabled" : "taskCard"} >
+      <div className={task.isCompleted ? "taskCard disabled" : "taskCard"} >
         <div className="taskNameAndPayOption">
           <div>
-            <h3 className="taskName">Football</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h3 className="taskName">{task.title}</h3>
+            <p>Assigned to <strong>{task.AssignedTo}</strong> </p>
           </div>
           <div className="taskOwner">
-            <img src="sample_image.png" alt="Task Manager" />
+            <img src={task.profilePicAssigned} alt="Task Manager" />
           </div>
         </div>
         <div className="taskDueDateAndPayTask">
           <div>
             <i className="fa fa-calendar"></i>
             <span className="eventDueDate">
-              20<sup>th</sup> Dec 2021
+              20 Dec 2021, 12:55PM
             </span>
           </div>
           <div className="payTask" title="Complete the task">

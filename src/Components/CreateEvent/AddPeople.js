@@ -7,25 +7,25 @@ import AddPerson from "./AddPerson";
 import "./AddPeople.css";
 import { Button } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    // padding: theme.spacing(2, 4, 3),
-    width: "40%",
-    borderRadius: "10px",
-    height: "85%",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   modal: {
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//   paper: {
+//     backgroundColor: theme.palette.background.paper,
+//     boxShadow: theme.shadows[5],
+//     // padding: theme.spacing(2, 4, 3),
+//     width: "40%",
+//     borderRadius: "10px",
+//     height: "85%",
+//   },
+// }));
 
 export default function AddPeople({ formData, prevStep, nextStep }) {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  // const classes = useStyles();
+  // const [open, setOpen] = useState(false);
   const [data, setData] = useState([
     {
       name: "Shivansh Gupta",

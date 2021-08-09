@@ -1,12 +1,14 @@
 import React from "react";
 import "./Card.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function Card({ event }) {
+  const history = useHistory();
   return (
-    <Link to="/event" style={{textDecoration:"none"}} >
-    <div className="eventCard" tabIndex={0} id={event.id}>
+    // <Link to="/event" style={{textDecoration:"none"}} >
+    <div className="eventCard" onClick={() => history.push('/event')} tabIndex={0} id={event.id}>
       <div
         className="cardTopSection"
         style={{ backgroundImage: `url("${event.category}.jpeg")` }}
@@ -37,12 +39,17 @@ function Card({ event }) {
           <p style={{ marginLeft: "5px" }}>
             Batman, Amy, Rajat and 2 more are in this event
           </p>
-        </div>{" "}
+        </div>
         {/* Will make this a component later on */}
-        <i className="fa fa-user-plus" />
+        <i className="fa fa-user-plus" onClick={(e) => {
+            console.log('Himalaya')
+          e.stopPropagation(); // to stop click event propogating to the parent event 
+        }
+       
+          } style={{zIndex:"100"}} />
       </div>
     </div>
-    </Link>
+    // </Link>
   );
 }
 

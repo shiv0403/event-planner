@@ -1,17 +1,50 @@
-import React, { useState } from "react";
-import TrendingFlatIcon from "@material-ui/icons/TrendingFlat";
-import { data } from "./data";
+import React, { useState,useEffect } from "react";
 import "./LogFile.css";
 import Transaction from "./Transaction";
 import CircularProgress from '../EventInfo/CircularProgress';
 import CallMadeIcon from "@material-ui/icons/CallMade";
 import CallReceivedIcon from "@material-ui/icons/CallReceived";
+import axios from "axios";
 
 function LogFile() {
-  const [info, setInfo] = useState(data);
+  const [info, setInfo] = useState([]);
+  const [Loader, setLoader] = useState(false);
+
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    async function fetchTransactions() {
+      setLoader(true);
+      setTimeout(async()=>{
+        const { data } = await axios.get("./data.json");
+        console.log(data);
+        setInfo(data);
+        setLoader(false);
+      },500)
+      
+    }
+    fetchTransactions();
+    return () => {
+      source.cancel();
+    };
+  }, []);
 
   return (
-    <div className="logFile__data">
+    <div  style={
+      Loader
+        ? {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "80vh",
+          }
+        : {}
+    }>
+    {Loader ? (
+        <img
+          src="loaderWifi.gif"
+          style={{ width: "80px", height: "80px" }}
+        ></img>
+      ) : (<div className="logFile__data">
        <div className="eventInfo__budget">
         <div className="eventInfo__budget__main">
           <div className="eventInfo__budget__details">
@@ -42,6 +75,7 @@ function LogFile() {
       <div className="transactionLogsContainer">
       {info.map((transaction) => (
         <Transaction
+         key={transaction.id}
           from={transaction.from}
           amount={transaction.amount}
           task={transaction.task}
@@ -50,6 +84,7 @@ function LogFile() {
         />
       ))}
       </div>
+    </div>)}
     </div>
   );
 }
