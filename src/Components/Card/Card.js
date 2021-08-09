@@ -1,11 +1,20 @@
 import React from "react";
 import "./Card.css";
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
+import InviteModal from "../InviteModal/InviteModal";
 
 function Card({ event }) {
+  const [open, setOpen] = React.useState(false);
   const history = useHistory();
+
+  const handleOpen = () => {
+
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     // <Link to="/event" style={{textDecoration:"none"}} >
     <div className="eventCard" onClick={() => history.push('/event')} tabIndex={0} id={event.id}>
@@ -40,13 +49,12 @@ function Card({ event }) {
             Batman, Amy, Rajat and 2 more are in this event
           </p>
         </div>
-        {/* Will make this a component later on */}
+        {open && <InviteModal open={open} handleClose={handleClose} />}
         <i className="fa fa-user-plus" onClick={(e) => {
-            console.log('Himalaya')
-          e.stopPropagation(); // to stop click event propogating to the parent event 
-        }
-       
-          } style={{zIndex:"100"}} />
+           e.stopPropagation();
+         handleOpen();
+        
+          }} />
       </div>
     </div>
     // </Link>

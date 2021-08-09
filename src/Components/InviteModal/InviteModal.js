@@ -62,32 +62,7 @@ export default function InviteModal({ open, handleOpen, handleClose }) {
     {
       name: "Priyansh Singh",
       email: "priyanshsingh@gmail.com",
-    },
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
-
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
-    {
-      name: "asdlkfj lskdjf",
-      email: "sadlkfj@lskdf.com",
-    },
+    }
   ]);
 
   // const handleOpen = () => {
