@@ -7,21 +7,30 @@ import AddPerson from "./AddPerson";
 import "./AddPeople.css";
 import { Button } from "@material-ui/core";
 
-// const useStyles = makeStyles((theme) => ({
-//   modal: {
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-//   paper: {
-//     backgroundColor: theme.palette.background.paper,
-//     boxShadow: theme.shadows[5],
-//     // padding: theme.spacing(2, 4, 3),
-//     width: "40%",
-//     borderRadius: "10px",
-//     height: "85%",
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    width: "40%",
+    borderRadius: "10px",
+    height: "80vh",
+    [theme.breakpoints.down("lg")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "95%",
+      height: "70vh",
+    },
+  },
+}));
 
 export default function AddPeople({ formData, prevStep, nextStep }) {
   // const classes = useStyles();

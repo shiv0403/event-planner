@@ -7,6 +7,9 @@ import CallReceivedIcon from "@material-ui/icons/CallReceived";
 import "./EventInfo.css";
 import EventInfoPerson from "./EventInfoPerson";
 import axios from "axios";
+import InviteModal from "../InviteModal/InviteModal";
+import TransferMoney from "../TransferMoney/TransferMoney";
+import AddMoney from "../AddMoney/AddMoney";
 
 function EventInfo() {
   const [Loader, setLoader] = useState(false);
@@ -30,6 +33,29 @@ function EventInfo() {
       source.cancel();
     };
   }, []);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpenTransfer = () => {
+    setOpenTransfer(true);
+  };
+
+  const handleCloseTransfer = () => {
+    setOpenTransfer(false);
+  };
+
+  const handleOpenLimit = () => {
+    setOpenLimit(true);
+  };
+
+  const handleCloseLimit = () => {
+    setOpenLimit(false);
+  };
 
   return (
     <div
@@ -64,22 +90,36 @@ function EventInfo() {
               <CircularProgress />
             </div>
           </div>
-          <div className="eventInfo__budget__buttons">
-            <button>
-              <p>Deposit</p> <CallMadeIcon />
-            </button>
-            <button>
-              <p>WithDraw</p>
-              <CallReceivedIcon />
-            </button>
-          </div>
+          <div className="eventInfo_budget_buttons">
+          <button onClick={handleOpenLimit}>
+            <p>Set Limit</p>
+            <CallReceivedIcon />
+          </button>
+          {openTransfer && (
+            <TransferMoney
+              open={openTransfer}
+              handleClose={handleCloseTransfer}
+            />
+          )}
+
+          {openLimit && (
+            <AddMoney open={openLimit} handleClose={handleCloseLimit} />
+          )}
+
+          <button onClick={handleOpenTransfer}>
+            <p>Transfer</p> <CallMadeIcon />
+          </button>
+        </div>
         </div>
         <div className="participantsDetails">
-          <p>20 Participants</p>
-          <p>
-            <i className="fa fa-user-plus"></i>
-          </p>
-        </div>
+        <p>20 Participants</p>
+
+        {open && <InviteModal open={open} handleClose={handleClose} />}
+
+        <p>
+          <i className="fa fa-user-plus" onClick={handleOpen}></i>
+        </p>
+      </div>
         <div className="eventInfo__people">
           {people.map((person) => {
             return (

@@ -31,12 +31,29 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
     borderRadius: "10px",
     width: "30%",
+    height: "auto",
+    [theme.breakpoints.down("lg")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "95%",
+      // height: "70vh",
+    },
   },
   formControl: {
     minWidth: 120,
     width: "100%",
     textAlign: "left",
     margin: "10px auto 40px auto",
+  },
+  bank__name: {
+    fontWeight: "bold",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.9rem",
+    },
   },
   btn: {
     width: "100%",
@@ -72,10 +89,10 @@ function getStyles(name, bankName, theme) {
   };
 }
 
-function TransferMoney() {
+function TransferMoney({ open, handleClose }) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+
   const [upi, setUpi] = useState("");
   const [amount, setAmount] = useState();
   const [bankName, setBankName] = React.useState([]);
@@ -102,25 +119,18 @@ function TransferMoney() {
     setUpi(event.target.value);
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const close = () => {
+    handleClose();
   };
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        onClose={handleClose}
+        onClose={close}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -169,7 +179,7 @@ function TransferMoney() {
                             style={{ width: "100%" }}
                           >
                             <div className="transfer__bankDetails">
-                              <p style={{ fontWeight: "800" }}>
+                              <p className={classes.bank__name}>
                                 {name.bankName}
                               </p>
                               <p style={{ color: "gray" }}>{name.accNo}</p>
