@@ -43,7 +43,7 @@ function RechartPieChart() {
       
     return (
         <div>
-            <AreaChart width={700} height={350} data={data}
+            <AreaChart width={400} height={150} data={data}
   margin={{ top: 0, right: 50, left: 0, bottom: 0 }}>
   <defs>
     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

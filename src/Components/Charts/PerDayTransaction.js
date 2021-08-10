@@ -44,7 +44,7 @@ function PerDayTransaction() {
                               drawBorder: false
                           }, 
                           ticks: {
-                            color: "white", // this here
+                            color: "white", 
                           },
                       },
                      
