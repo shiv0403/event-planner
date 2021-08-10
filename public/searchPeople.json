@@ -1,0 +1,31 @@
+[{
+    "id":1,
+    "name": "Shivansh Gupta",
+    "email": "shivanshgupta@gmail.com"
+  },
+  {
+    "id":2, 
+    "name": "Himalaya Gupta",
+    "email": "himalayagupta@gmail.com"
+  },
+  {
+    "id":3,
+    "name": "Priyansh Singh",
+    "email": "priyanshsingh@gmail.com"
+  }, {
+    "id":4,
+    "name": "Aviral Saxena",
+    "email": "aviral@gmail.com"
+  }, {
+    "id":5,
+    "name": "Mohit Agarwal",
+    "email": "mohitsingh@gmail.com"
+  }, {
+    "id":6,
+    "name": "Naman Agarwal",
+    "email": "namanagarwal@gmail.com"
+  }, {
+    "id":7,
+    "name": "Himanshu Gupta",
+    "email": "himanshu@gmail.com"
+  }]

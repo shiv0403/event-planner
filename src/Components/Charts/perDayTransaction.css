@@ -1,0 +1,10 @@
+.perDayTransactionContainer{
+    max-width: 400px;
+    width: 100%;
+    overflow-x: auto;
+}
+.perPersonTransactionContainer{
+    max-width: 220px;
+    width: 100%;
+    overflow-x:auto ;
+}

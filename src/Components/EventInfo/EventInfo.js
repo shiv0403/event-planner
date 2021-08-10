@@ -22,12 +22,10 @@ function EventInfo() {
     const source = axios.CancelToken.source();
     async function fetchTasks() {
       setLoader(true);
-      setTimeout(async()=>{
         const { data } = await axios.get("./people.json");
         console.log(data);
         setPeople(data);
         setLoader(false);
-      },500)
       
     }
     fetchTasks();
@@ -94,7 +92,7 @@ function EventInfo() {
           </div>
           <div className="eventInfo_budget_buttons">
           <button onClick={handleOpenLimit}>
-            <p>Set Limit</p>
+            <p>SetLimit</p>
             <CallReceivedIcon />
           </button>
           {openTransfer && (

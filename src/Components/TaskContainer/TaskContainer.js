@@ -15,13 +15,10 @@ function TaskContainer() {
     const source = axios.CancelToken.source();
     async function fetchTasks() {
       setLoader(true);
-      setTimeout(async()=>{
         const { data } = await axios.get("./Tasks.json");
         console.log(data);
         setTasks(data);
         setLoader(false);
-      },500)
-      
     }
     fetchTasks();
     return () => {

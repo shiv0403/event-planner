@@ -62,7 +62,6 @@ function Header({ toggleSidebar, setToggleSidebar }) {
         event.owner.match(regex)
       );
     });
-    // console.log(matches);
     fillSearchResults(matches);
   };
   const handleEventSearch = (e) => {
