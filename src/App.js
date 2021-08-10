@@ -8,6 +8,7 @@ import Profile from "./Pages/Profile/Profile";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/SIgnup/Signup";
 import TestPage from "./Pages/TestPage/TestPage";
+import Privacy from "./Components/Privacy/Privacy";
 import BarChart from "./Components/Charts/BarChart";
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           {/* <Route path="/testpage" component={TestPage}/> */}
-          <Route path="/testComponent" component ={BarChart}/>
+          <Route path="/testComponent" component={Privacy} />
           <Route component={pageNotFound} />
         </Switch>
       </div>
