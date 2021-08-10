@@ -6,7 +6,7 @@ import InviteModal from "../InviteModal/InviteModal";
 function Card({ event }) {
   const [open, setOpen] = React.useState(false);
   const history = useHistory();
-
+  const [cardClickAction, setCardClickAction] = React.useState(false)
   const handleOpen = () => {
 
     setOpen(true);
@@ -14,10 +14,11 @@ function Card({ event }) {
 
   const handleClose = () => {
     setOpen(false);
+    setCardClickAction(false);
   };
   return (
     // <Link to="/event" style={{textDecoration:"none"}} >
-    <div className="eventCard" onClick={() => history.push('/event')} tabIndex={0} id={event.id}>
+    <div className="eventCard" onClick={() => cardClickAction ? console.log("invite button Clicked") : history.push('/event')} tabIndex={0} id={event.id}>
       <div
         className="cardTopSection"
         style={{ backgroundImage: `url("${event.category}.jpeg")` }}
@@ -51,9 +52,9 @@ function Card({ event }) {
         </div>
         {open && <InviteModal open={open} handleClose={handleClose} />}
         <i className="fa fa-user-plus" onClick={(e) => {
-           e.stopPropagation();
-         handleOpen();
-        
+            e.stopPropagation();
+            setCardClickAction(true);
+            handleOpen();
           }} />
       </div>
     </div>

@@ -1,25 +1,25 @@
 import React, { useState,useEffect } from "react";
 import "./LogFile.css";
 import Transaction from "./Transaction";
-import CircularProgress from '../EventInfo/CircularProgress';
-import CallMadeIcon from "@material-ui/icons/CallMade";
-import CallReceivedIcon from "@material-ui/icons/CallReceived";
 import axios from "axios";
+import PerDayTransaction from '../Charts/PerDayTransaction'
+import PerPersonTransaction from '../Charts/PerPersonTransaction'
+
 
 function LogFile() {
   const [info, setInfo] = useState([]);
   const [Loader, setLoader] = useState(false);
+  const [firstChart, setFirstChart] = useState(true);
+  const [secondChart, setSecondChart] = useState(false);
 
   useEffect(() => {
     const source = axios.CancelToken.source();
     async function fetchTransactions() {
       setLoader(true);
-      setTimeout(async()=>{
         const { data } = await axios.get("./data.json");
         console.log(data);
         setInfo(data);
         setLoader(false);
-      },500)
       
     }
     fetchTransactions();
@@ -27,6 +27,15 @@ function LogFile() {
       source.cancel();
     };
   }, []);
+
+  const showFirstChart = () => {
+    setFirstChart(true);
+    setSecondChart(false);
+  }
+  const showSecondChart = () => {
+    setFirstChart(false);
+    setSecondChart(true);
+  }
 
   return (
     <div  style={
@@ -46,26 +55,28 @@ function LogFile() {
         ></img>
       ) : (<div className="logFile__data">
        <div className="eventInfo__budget">
-        <div className="eventInfo__budget__main">
-          <div className="eventInfo__budget__details">
-            <p>Total Budget</p>
-            <h3>$12000</h3>
-            <br />
-            <p>Budget remaining</p>
-            <h4>$4000</h4>
+        <div className="chartContainer">
+          {firstChart ? <PerDayTransaction/> : ( 
+          
+          <div className="perPersonDetail">
+            <div className="eventInfo__budget__details">
+              <p>Total Budget</p>
+              <h3>$12000</h3>
+              <br />
+              <p>Budget remaining</p>
+              <h4>$4000</h4>
+            </div>
+            <PerPersonTransaction/>
           </div>
-          <div className="evenInfo__budget__circular">
-            <CircularProgress />
-          </div>
+          )}
         </div>
-        <div className="eventInfo__budget__buttons">
-          <button>
-            <p>Deposit</p> <CallMadeIcon />
-          </button>
-          <button>
-            <p>WithDraw</p>
-            <CallReceivedIcon />
-          </button>
+        <div className="switchCharts">
+         <button className={firstChart ? "perDay active" : "perDay"} onClick={showFirstChart}><p>View Per Day </p> 
+          <img src="perDay.svg" style={{width:"15px", height:"15px"}} alt="" />
+         </button>
+         <button className={secondChart ? "perPerson active" : "perPerson"} onClick={showSecondChart}><p>View Per Person</p>
+         <img src="perPerson.svg" style={{width:"23px", height:"23px"}} alt="" />
+         </button>
         </div>
       </div>
       <div className="participantsDetails">

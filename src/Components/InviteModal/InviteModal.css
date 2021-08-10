@@ -1,7 +1,7 @@
 .search__header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid #eee;
 }
 
@@ -14,6 +14,7 @@
   outline: none;
   border: 0px;
   font-size: 1.25rem;
+ 
 }
 
 .search__header > button {
@@ -29,8 +30,7 @@
 
 .search__body {
   overflow-y: auto;
-  height: 70%;
-  border-bottom: 1px solid #eee;
+  height:56vh;
 }
 
 .search__body::-webkit-scrollbar {
@@ -42,7 +42,11 @@
   justify-content: space-between;
   padding: 20px;
   width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   margin: auto;
+  border-top: 1px solid #eee;
 }
 
 .search__footer__link {
@@ -79,6 +83,9 @@
 }
 
 @media (max-width: 550px) {
+  .search__body{
+    height: 62vh;
+  }
   .search__header {
     padding: 10px 10px;
     width: 100%;
