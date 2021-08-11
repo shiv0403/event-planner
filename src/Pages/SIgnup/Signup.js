@@ -39,7 +39,7 @@ const [confirmPassword, setconfirmPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name != '' && email != '' && phone.length >= 10 && phone.length <=12 && password == confirmPassword && password.length >= 8){
+    if (name !== '' && email !== '' && phone.length >= 10 && phone.length <=12 && password === confirmPassword && password.length >= 8){
       dispatch(registerUser(name,phone,email,password));
     }else{
       alert('Form Error');

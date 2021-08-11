@@ -50,7 +50,6 @@ const useStyles = makeStyles(() => ({
 
 const CreateEvent = ({ open, handleAddEvent }) => {
   const classes = useStyles();
-  // const [open, setOpen] = React.useState(false);
   const [step, setStep] = useState(1);
   const [eventTitle, setEventTitle] = useState("");
   const [eventVenue, setEventVenue] = useState("");
@@ -68,13 +67,13 @@ const CreateEvent = ({ open, handleAddEvent }) => {
     eventDate,
   };
 
-  //next form
+
+
   const nextStep = () => {
     console.log(values);
     setStep((prev) => prev + 1);
   };
 
-  //prev form
   const prevStep = () => {
     setStep((prev) => prev - 1);
   };
@@ -107,10 +106,6 @@ const CreateEvent = ({ open, handleAddEvent }) => {
     setEventCategory(e);
   };
 
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
-
   const handleClose = () => {
     handleAddEvent();
     setTimeout(function () {
@@ -120,9 +115,6 @@ const CreateEvent = ({ open, handleAddEvent }) => {
 
   return (
     <div>
-      {/* <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button> */}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -136,8 +128,8 @@ const CreateEvent = ({ open, handleAddEvent }) => {
         }}
       >
         <Fade in={open}>
+          
           <div className={classes.paper}>
-            {/* main code */}
             {step === 1 && (
               <EventDetails
                 nextStep={nextStep}
