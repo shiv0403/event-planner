@@ -38,29 +38,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Privacy = () => {
+const Privacy = ({ open, handleClose }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const close = () => {
+    handleClose();
   };
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={open}
-        onClose={handleClose}
+        onClose={close}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -75,7 +67,7 @@ const Privacy = () => {
               information. We understand this is a big responsibility and work
               hard to protect your information and put you in control.
             </p>
-            <Button className={classes.btn} color="primary">
+            <Button className={classes.btn} color="primary" onClick={close}>
               I Understand
             </Button>
           </div>
