@@ -53,7 +53,7 @@ function Login() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    if (email != '' && password != '' && password.length > 8){
+    if (email !== '' && password !== '' && password.length > 8){
       dispatch(loginUser(email,password));
     }else{
       alert('Login failed')
