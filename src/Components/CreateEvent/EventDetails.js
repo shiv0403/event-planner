@@ -13,6 +13,7 @@ import {
 import useStyle from "./styles";
 
 import "./EventDetails.css";
+import axios from "axios";
 
 function EventDetails({
   nextStep,
@@ -21,24 +22,32 @@ function EventDetails({
   handleChangeCategory,
 }) {
   const classes = useStyle();
-  // const [isMoney, setIsMoney] = useState(true);
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [checked5, setChecked5] = useState(false);
   const [checked6, setChecked6] = useState(false);
-  // const [selectedDate, setSelectedDate] = React.useState(
-  //   new Date("2014-08-18T21:11:54")
-  // );
-
-  // const handleDateChange = (date) => {
-  //   setSelectedDate(date);
-  // };
-
-  const handleNext = () => {
-    nextStep();
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [Profile, setProfile] = useState(false);
+  const showProfilePic = (e) =>  {
+    const url = URL.createObjectURL(e.target.files[0])
+    console.log(url);
+    let newImg = e.target.value.replace(/^.*\\/,"");
+     setProfile(url);
+  }
+  const handleNext = async () => {
+    try {
+      setIsDisabled(true);
+      // const response =  await axios.post();
+      nextStep();
+    }catch(e){
+      alert(e.message)
+    }
+    setIsDisabled(false);
   };
+
+ 
 
   const handleCheck = (check) => {
     for (var i = 1; i <= 6; ++i) {
@@ -64,7 +73,14 @@ function EventDetails({
   return (
     <div className="eventDetails">
       <FormControl>
-        <Avatar className={classes.avatar} />
+        <label htmlFor="chooseProfileImage"  >
+          <div title="Choose Profile Image" style={{position:"relative", cursor:"pointer", width:"80px", height:"80px", borderRadius:"50%", background:"gray", marginLeft:"auto",marginRight:"auto"}}>
+            <i className="fa fa-camera" style={!Profile ? {position:"absolute",top:"50%",left:"50%", transform:"translate(-50%,-50%)", fontSize:"30px",color:"white"}: {}}></i>
+             {/* <p className="" style={{position:"absolute", top:"40%", left:"120%", fontSize:"14px"}}>{Profile}</p> */}
+             <img src={Profile} style ={Profile ? {position:"absolute",top:"50%",left:"50%", transform:"translate(-50%,-50%)", width:"80px",height:"80px",borderRadius:"50%"} : {}} alt="" />
+          </div>
+        </label>
+        <input type="file" onChange = {(e) => showProfilePic(e)} accept="image/*" name="" id="chooseProfileImage" style={{visibility:"none",display:"none"}} />
         <Grid container spacing={2}>
           <TextField
             name="eventTitle"
@@ -179,9 +195,11 @@ function EventDetails({
             name="eventDate"
             onChange={handleChange("eventDate")}
             xs={6}
-            type="date"
+            type="text"
+            onFocus = {(e) => e.target.type = "date"}
             varient="outlined"
             fullWidth
+            placeholder="Choose Event End Date"
             required
             defaultValue={values.eventDate}
           />
@@ -203,6 +221,7 @@ function EventDetails({
           className={classes.button}
           onClick={handleNext}
           type="submit"
+          style = {isDisabled ? {pointerEvents:"none",color:"gray"} : {}}
         >
           Next
         </Button>
