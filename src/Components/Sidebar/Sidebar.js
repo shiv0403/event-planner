@@ -35,17 +35,13 @@ function Sidebar({ toggleSidebar }) {
           <p className="sectionHeading">MAIN</p>
           <div className="sectionLinks">
             <Link to="/" style={{ textDecoration: "none" }}>
-              <a
-                href="#"
-                className={isActive ? "pageLink active" : "pageLink"}
-                onClick={handleActive}
-              >
+              <a href="#" className={isActive ? "pageLink active" : "pageLink"}>
                 <HomeIcon />
                 <p>Home</p>
               </a>
             </Link>
             <Link to="/profile" style={{ textDecoration: "none" }}>
-              <a href="#" className="pageLink" onClick={handleActive}>
+              <a href="#" className="pageLink">
                 <AccountBoxIcon />
 
                 <p>Profile</p>
@@ -56,7 +52,7 @@ function Sidebar({ toggleSidebar }) {
         <div className="pageLinkSection">
           <p className="sectionHeading">CONFIGURATION</p>
           <div className="sectionLinks">
-            <a href="#" className="pageLink" onClick={handleActive}>
+            <a href="#" className="pageLink">
               <LockIcon />
               <p onClick={handleOpen}>Privacy</p>
               {openPrivacy && (
@@ -64,14 +60,14 @@ function Sidebar({ toggleSidebar }) {
               )}
             </a>
             <Link to="/accounts" style={{ textDecoration: "none" }}>
-              <a href="#" className="pageLink" onClick={handleActive}>
+              <a href="#" className="pageLink">
                 <SupervisorAccountIcon />
 
                 <p>Accounts</p>
               </a>
             </Link>
             <Link to="/logout" style={{ textDecoration: "none" }}>
-              <a href="#" className="pageLink" onClick={handleActive}>
+              <a href="#" className="pageLink">
                 <ExitToAppIcon />
                 <p>Log Out</p>
               </a>
